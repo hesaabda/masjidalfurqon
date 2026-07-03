@@ -1,2935 +1,886 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masjid Al-Furqon - Membangun Generasi Rabbani</title>
-    
-    <!-- Fontsource: Poppins & Amiri -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/poppins@latest/latin.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/amiri@latest/latin.css">
-    
-    <!-- FontAwesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- AOS (Animate On Scroll) CSS -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    
-    <!-- ============================================
-         SEMUA KODE CSS BERADA DI ANTARA TAG <style>
-    ============================================ -->
-    <style>
-        /* ========================================
-           CSS VARIABLES & RESET
-        ======================================== */
-        :root {
-            --blue-50: #eff6ff;
-            --blue-100: #dbeafe;
-            --blue-200: #bfdbfe;
-            --blue-300: #93c5fd;
-            --blue-400: #60a5fa;
-            --blue-500: #3b82f6;
-            --blue-600: #2563eb;
-            --blue-700: #1d4ed8;
-            --blue-800: #1e40af;
-            --blue-900: #1e3a8a;
-            
-            --amber-50: #fffbeb;
-            --amber-100: #fef3c7;
-            --amber-200: #fde68a;
-            --amber-400: #fbbf24;
-            --amber-500: #f59e0b;
-            --amber-600: #d97706;
-            
-            --orange-50: #fff7ed;
-            --orange-100: #ffedd5;
-            --orange-200: #fed7aa;
-            --orange-500: #f97316;
-            --orange-600: #ea580c;
-            
-            --red-50: #fef2f2;
-            --red-100: #fee2e2;
-            --red-200: #fecaca;
-            --red-500: #ef4444;
-            --red-600: #dc2626;
-            
-            --indigo-50: #eef2ff;
-            --indigo-100: #e0e7ff;
-            --indigo-200: #c7d2fe;
-            --indigo-600: #4f46e5;
-            
-            --yellow-600: #ca8a04;
-            --green-50: #f0fdf4;
-            --green-100: #dcfce7;
-            --green-500: #22c55e;
-            --green-600: #16a34a;
-            --green-700: #15803d;
-            --green-800: #166534;
-            --sky-500: #0ea5e9;
-            --purple-500: #a855f7;
-            --pink-500: #ec4899;
-            
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            
-            --white: #ffffff;
-            --black: #000000;
-            
-            --font-primary: 'Poppins', sans-serif;
-            --font-arabic: 'Amiri', serif;
-            
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            
-            --radius-sm: 0.375rem;
-            --radius-md: 0.5rem;
-            --radius-lg: 0.75rem;
-            --radius-xl: 1rem;
-            --radius-2xl: 1.5rem;
-            --radius-full: 9999px;
-            
-            --transition-fast: 0.2s ease;
-            --transition-base: 0.3s ease;
-            --transition-slow: 0.5s ease;
-        }
-        
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-        }
-        
-        body {
-            font-family: var(--font-primary);
-            color: var(--gray-700);
-            background-color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        body.modal-open {
-            overflow: hidden;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        button {
-            font-family: inherit;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-        
-        input, select, textarea {
-            font-family: inherit;
-            font-size: inherit;
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        .font-amiri {
-            font-family: var(--font-arabic);
-        }
-        
-        /* ========================================
-           CONTAINER & LAYOUT
-        ======================================== */
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .container { padding: 0 1.5rem; }
-        }
-        
-        @media (min-width: 1024px) {
-            .container { padding: 0 2rem; }
-        }
-        
-        /* ========================================
-           TEXT UTILITIES
-        ======================================== */
-        .text-center { text-align: center; }
-        .text-left { text-align: left; }
-        .text-right { text-align: right; }
-        
-        .text-xs { font-size: 0.75rem; line-height: 1rem; }
-        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-        .text-base { font-size: 1rem; line-height: 1.5rem; }
-        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
-        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-        
-        .font-medium { font-weight: 500; }
-        .font-semibold { font-weight: 600; }
-        .font-bold { font-weight: 700; }
-        .italic { font-style: italic; }
-        
-        .leading-relaxed { line-height: 1.625; }
-        
-        /* ========================================
-           COLOR UTILITIES
-        ======================================== */
-        .text-white { color: var(--white); }
-        .text-gray-500 { color: var(--gray-500); }
-        .text-gray-600 { color: var(--gray-600); }
-        .text-gray-700 { color: var(--gray-700); }
-        .text-blue-100 { color: var(--blue-100); }
-        .text-blue-200 { color: var(--blue-200); }
-        .text-blue-300 { color: var(--blue-300); }
-        .text-blue-600 { color: var(--blue-600); }
-        .text-blue-800 { color: var(--blue-800); }
-        .text-blue-900 { color: var(--blue-900); }
-        .text-amber-400 { color: var(--amber-400); }
-        .text-amber-500 { color: var(--amber-500); }
-        .text-amber-600 { color: var(--amber-600); }
-        .text-red-500 { color: var(--red-500); }
-        
-        .bg-white { background-color: var(--white); }
-        .bg-gray-50 { background-color: var(--gray-50); }
-        .bg-gray-100 { background-color: var(--gray-100); }
-        .bg-gray-200 { background-color: var(--gray-200); }
-        .bg-blue-50 { background-color: var(--blue-50); }
-        .bg-blue-100 { background-color: var(--blue-100); }
-        .bg-blue-600 { background-color: var(--blue-600); }
-        .bg-blue-800 { background-color: var(--blue-800); }
-        .bg-blue-900 { background-color: var(--blue-900); }
-        .bg-amber-50 { background-color: var(--amber-50); }
-        .bg-amber-100 { background-color: var(--amber-100); }
-        .bg-amber-500 { background-color: var(--amber-500); }
-        .bg-amber-600 { background-color: var(--amber-600); }
-        .bg-orange-50 { background-color: var(--orange-50); }
-        .bg-orange-100 { background-color: var(--orange-100); }
-        .bg-orange-500 { background-color: var(--orange-500); }
-        .bg-red-50 { background-color: var(--red-50); }
-        .bg-red-100 { background-color: var(--red-100); }
-        .bg-red-500 { background-color: var(--red-500); }
-        .bg-red-600 { background-color: var(--red-600); }
-        .bg-indigo-50 { background-color: var(--indigo-50); }
-        .bg-indigo-100 { background-color: var(--indigo-100); }
-        .bg-indigo-600 { background-color: var(--indigo-600); }
-        .bg-green-50 { background-color: var(--green-50); }
-        .bg-green-100 { background-color: var(--green-100); }
-        .bg-green-600 { background-color: var(--green-600); }
-        .bg-green-800 { background-color: var(--green-800); }
-        
-        .bg-gradient-instagram { background: linear-gradient(to bottom right, var(--purple-500), var(--pink-500)); }
-        
-        /* ========================================
-           FLEX & GRID UTILITIES
-        ======================================== */
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .flex-wrap { flex-wrap: wrap; }
-        .items-center { align-items: center; }
-        .items-start { align-items: flex-start; }
-        .justify-center { justify-content: center; }
-        .justify-between { justify-content: space-between; }
-        
-        .grid { display: grid; }
-        
-        .gap-2 { gap: 0.5rem; }
-        .gap-3 { gap: 0.75rem; }
-        .gap-4 { gap: 1rem; }
-        .gap-6 { gap: 1.5rem; }
-        .gap-8 { gap: 2rem; }
-        .gap-12 { gap: 3rem; }
-        
-        .hidden { display: none; }
-        .block { display: block; }
-        .inline-block { display: inline-block; }
-        .inline-flex { display: inline-flex; }
-        
-        /* ========================================
-           POSITION & SIZE
-        ======================================== */
-        .relative { position: relative; }
-        .absolute { position: absolute; }
-        .fixed { position: fixed; }
-        
-        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
-        .top-0 { top: 0; }
-        .left-0 { left: 0; }
-        .right-0 { right: 0; }
-        .bottom-0 { bottom: 0; }
-        .bottom-8 { bottom: 2rem; }
-        
-        .w-full { width: 100%; }
-        .h-full { height: 100%; }
-        .min-h-screen { min-height: 100vh; }
-        
-        .overflow-hidden { overflow: hidden; }
-        .overflow-y-auto { overflow-y: auto; }
-        
-        .z-10 { z-index: 10; }
-        .z-20 { z-index: 20; }
-        .z-50 { z-index: 50; }
-        .z-100 { z-index: 100; }
-        .z-150 { z-index: 150; }
-        .z-200 { z-index: 200; }
-        
-        /* ========================================
-           SPACING UTILITIES
-        ======================================== */
-        .p-2 { padding: 0.5rem; }
-        .p-3 { padding: 0.75rem; }
-        .p-4 { padding: 1rem; }
-        .p-6 { padding: 1.5rem; }
-        .p-8 { padding: 2rem; }
-        
-        .px-4 { padding-left: 1rem; padding-right: 1rem; }
-        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-        .px-8 { padding-left: 2rem; padding-right: 2rem; }
-        
-        .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-        
-        .pt-6 { padding-top: 1.5rem; }
-        .pt-8 { padding-top: 2rem; }
-        .pb-6 { padding-bottom: 1.5rem; }
-        .pb-8 { padding-bottom: 2rem; }
-        .pb-16 { padding-bottom: 4rem; }
-        
-        .m-auto { margin: auto; }
-        .mx-auto { margin-left: auto; margin-right: auto; }
-        
-        .mt-1 { margin-top: 0.25rem; }
-        .mt-2 { margin-top: 0.5rem; }
-        .mt-3 { margin-top: 0.75rem; }
-        .mt-4 { margin-top: 1rem; }
-        .mt-6 { margin-top: 1.5rem; }
-        .mt-8 { margin-top: 2rem; }
-        .mt-10 { margin-top: 2.5rem; }
-        .mt-12 { margin-top: 3rem; }
-        .mt-16 { margin-top: 4rem; }
-        .mt-20 { margin-top: 5rem; }
-        
-        .mb-1 { margin-bottom: 0.25rem; }
-        .mb-2 { margin-bottom: 0.5rem; }
-        .mb-3 { margin-bottom: 0.75rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mb-12 { margin-bottom: 3rem; }
-        .mb-16 { margin-bottom: 4rem; }
-        .mb-20 { margin-bottom: 5rem; }
-        
-        .mr-1 { margin-right: 0.25rem; }
-        .mr-2 { margin-right: 0.5rem; }
-        .mr-3 { margin-right: 0.75rem; }
-        .mr-4 { margin-right: 1rem; }
-        
-        .ml-1 { margin-left: 0.25rem; }
-        .ml-2 { margin-left: 0.5rem; }
-        
-        .-mt-20 { margin-top: -5rem; }
-        
-        /* ========================================
-           BORDER & RADIUS
-        ======================================== */
-        .border { border: 1px solid var(--gray-200); }
-        .border-2 { border-width: 2px; border-style: solid; }
-        .border-t { border-top: 1px solid var(--gray-200); }
-        .border-t-4 { border-top: 4px solid; }
-        .border-b { border-bottom: 1px solid var(--gray-200); }
-        .border-l-4 { border-left: 4px solid; }
-        
-        .rounded { border-radius: var(--radius-sm); }
-        .rounded-md { border-radius: var(--radius-md); }
-        .rounded-lg { border-radius: var(--radius-lg); }
-        .rounded-xl { border-radius: var(--radius-xl); }
-        .rounded-2xl { border-radius: var(--radius-2xl); }
-        .rounded-full { border-radius: var(--radius-full); }
-        .rounded-t-3xl { border-top-left-radius: var(--radius-2xl); border-top-right-radius: var(--radius-2xl); }
-        
-        /* ========================================
-           SHADOWS
-        ======================================== */
-        .shadow-sm { box-shadow: var(--shadow-sm); }
-        .shadow-md { box-shadow: var(--shadow-md); }
-        .shadow-lg { box-shadow: var(--shadow-lg); }
-        .shadow-xl { box-shadow: var(--shadow-xl); }
-        .shadow-2xl { box-shadow: var(--shadow-2xl); }
-        
-        /* ========================================
-           TRANSITIONS & ANIMATIONS
-        ======================================== */
-        .transition-all { transition: all var(--transition-base); }
-        .transition-colors { transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast); }
-        
-        .hover\:scale-105:hover { transform: scale(1.05); }
-        .hover\:scale-110:hover { transform: scale(1.1); }
-        .hover\:-translate-y-2:hover { transform: translateY(-0.5rem); }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(-25%) translateX(-50%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
-            50% { transform: translateY(0) translateX(-50%); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
-        }
-        .animate-bounce { animation: bounce 1s infinite; }
-        
-        /* ========================================
-           COMPONENT: NAVBAR
-        ======================================== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            transition: all var(--transition-base);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-        
-        .navbar-scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .navbar-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 5rem;
-            gap: 1rem;
-        }
-        
-        .navbar-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            flex-shrink: 0;
-        }
-        
-        .logo-icon {
-            width: 3rem;
-            height: 3rem;
-            background: var(--blue-800);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.25rem;
-        }
-        
-        .logo-text h1 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--blue-900);
-        }
-        
-        .logo-text p {
-            font-size: 0.75rem;
-            color: var(--gray-600);
-        }
-        
-        .navbar-menu {
-            display: none;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        
-        @media (min-width: 1024px) {
-            .navbar-menu { display: flex; }
-        }
-        
-        .navbar-menu a {
-            color: var(--gray-700);
-            font-weight: 500;
-            transition: color var(--transition-fast);
-            white-space: nowrap;
-        }
-        
-        .navbar-menu a:hover {
-            color: var(--blue-800);
-        }
-        
-        .navbar-actions {
-            display: none;
-            align-items: center;
-            gap: 0.75rem;
-            flex-shrink: 0;
-        }
-        
-        @media (min-width: 1024px) {
-            .navbar-actions { display: flex; }
-        }
-        
-        .hamburger-btn {
-            color: var(--blue-900);
-            font-size: 1.5rem;
-            display: block;
-        }
-        
-        @media (min-width: 1024px) {
-            .hamburger-btn { display: none; }
-        }
-        
-        .mobile-menu {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height var(--transition-base), opacity var(--transition-base);
-            background: var(--white);
-            border-top: 1px solid var(--gray-200);
-        }
-        
-        @media (min-width: 1024px) {
-            .mobile-menu { display: none; }
-        }
-        
-        .mobile-menu.active {
-            max-height: 600px;
-            opacity: 1;
-        }
-        
-        .mobile-menu-inner {
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        .mobile-menu a {
-            display: block;
-            padding: 0.5rem 0;
-            color: var(--gray-700);
-            font-weight: 500;
-        }
-        
-        .mobile-menu a:hover {
-            color: var(--blue-800);
-        }
-        
-        /* ========================================
-           COMPONENT: BUTTONS
-        ======================================== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-full);
-            font-weight: 600;
-            transition: all var(--transition-base);
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        
-        .btn:hover {
-            transform: scale(1.05);
-        }
-        
-        .btn-primary {
-            background: var(--blue-800);
-            color: var(--white);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .btn-primary:hover {
-            background: var(--blue-900);
-        }
-        
-        .btn-amber {
-            background: var(--amber-500);
-            color: var(--white);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .btn-amber:hover {
-            background: var(--amber-600);
-        }
-        
-        .btn-white {
-            background: var(--white);
-            color: var(--blue-900);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .btn-white:hover {
-            background: var(--gray-100);
-        }
-        
-        .btn-whatsapp {
-            background: var(--green-600);
-            color: var(--white);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-whatsapp:hover {
-            background: var(--green-700);
-        }
-        
-        .btn-lg {
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
-        }
-        
-        .btn-sm {
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-        }
-        
-        .btn-block {
-            display: flex;
-            width: 100%;
-        }
-        
-        /* ========================================
-           COMPONENT: HERO
-        ======================================== */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('https://image.qwenlm.ai/public_source/b9009866-5dfd-4024-8e02-fe82d714ed7a/11b7dfc92-8847-4960-bb7c-478393b338db.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, 
-                rgba(30, 58, 138, 0.75), 
-                rgba(30, 58, 138, 0.55), 
-                rgba(30, 58, 138, 0.85));
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 0 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .hero-content { padding: 0 1.5rem; }
-        }
-        
-        @media (min-width: 1024px) {
-            .hero-content { padding: 0 2rem; }
-        }
-        
-        .hero-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-        
-        @media (min-width: 640px) {
-            .hero-title { font-size: 3rem; }
-        }
-        
-        @media (min-width: 1024px) {
-            .hero-title { font-size: 4.5rem; }
-        }
-        
-        .hero-title .highlight {
-            color: var(--amber-400);
-        }
-        
-        .hero-subtitle {
-            font-family: var(--font-arabic);
-            font-style: italic;
-            font-size: 1.25rem;
-            color: var(--amber-400);
-            margin-bottom: 3rem;
-        }
-        
-        @media (min-width: 640px) {
-            .hero-subtitle { font-size: 1.5rem; }
-        }
-        
-        @media (min-width: 768px) {
-            .hero-subtitle { font-size: 1.875rem; }
-        }
-        
-        .hero-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        @media (min-width: 640px) {
-            .hero-buttons { flex-direction: row; }
-        }
-        
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 1s infinite;
-            color: var(--white);
-            font-size: 1.5rem;
-        }
-        
-        /* ========================================
-           COMPONENT: SHOLAT WIDGET
-        ======================================== */
-        .sholat-widget {
-            position: relative;
-            z-index: 20;
-            margin-top: -5rem;
-            padding-bottom: 4rem;
-        }
-        
-        .sholat-card-container {
-            background: var(--white);
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-2xl);
-            padding: 1.5rem;
-        }
-        
-        @media (min-width: 640px) {
-            .sholat-card-container { padding: 2rem; }
-        }
-        
-        .sholat-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .sholat-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--blue-900);
-            margin-bottom: 0.5rem;
-        }
-        
-        @media (min-width: 640px) {
-            .sholat-header h2 { font-size: 1.875rem; }
-        }
-        
-        .sholat-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .sholat-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        
-        @media (min-width: 1024px) {
-            .sholat-grid { grid-template-columns: repeat(5, 1fr); }
-        }
-        
-        .sholat-card {
-            border-radius: var(--radius-xl);
-            padding: 1.5rem;
-            text-align: center;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: all var(--transition-base);
-        }
-        
-        .sholat-card:hover {
-            transform: translateY(-0.5rem);
-            border-color: var(--amber-400);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .sholat-card.subuh {
-            background: linear-gradient(to bottom right, var(--blue-50), var(--blue-100));
-            border-color: var(--blue-200);
-        }
-        
-        .sholat-card.dzuhur {
-            background: linear-gradient(to bottom right, var(--amber-50), var(--amber-100));
-            border-color: var(--amber-200);
-        }
-        
-        .sholat-card.ashar {
-            background: linear-gradient(to bottom right, var(--orange-50), var(--orange-100));
-            border-color: var(--orange-200);
-        }
-        
-        .sholat-card.maghrib {
-            background: linear-gradient(to bottom right, var(--red-50), var(--red-100));
-            border-color: var(--red-200);
-        }
-        
-        .sholat-card.isya {
-            background: linear-gradient(to bottom right, var(--indigo-50), var(--indigo-100));
-            border-color: var(--indigo-200);
-        }
-        
-        .sholat-icon {
-            width: 4rem;
-            height: 4rem;
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: var(--white);
-            font-size: 1.5rem;
-        }
-        
-        .sholat-name {
-            font-weight: 700;
-            color: var(--blue-900);
-            font-size: 1.125rem;
-            margin-bottom: 0.25rem;
-        }
-        
-        .sholat-time {
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: var(--blue-800);
-        }
-        
-        .sholat-zone {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-            margin-top: 0.5rem;
-        }
-        
-        /* ========================================
-           COMPONENT: SECTIONS
-        ======================================== */
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-title {
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: var(--blue-900);
-            margin-bottom: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .section-title { font-size: 2.25rem; }
-        }
-        
-        @media (min-width: 1024px) {
-            .section-title { font-size: 3rem; }
-        }
-        
-        .section-divider {
-            width: 6rem;
-            height: 0.25rem;
-            background: var(--amber-500);
-            margin: 0 auto;
-            border-radius: var(--radius-full);
-        }
-        
-        .section-subtitle {
-            color: var(--gray-600);
-            margin-top: 1rem;
-            font-size: 1.125rem;
-        }
-        
-        .section-bg-gray { background: var(--gray-50); }
-        .section-bg-white { background: var(--white); }
-        
-        /* ========================================
-           COMPONENT: GRID LAYOUTS
-        ======================================== */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-        
-        @media (min-width: 1024px) {
-            .grid-2 { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .grid-3 { grid-template-columns: repeat(3, 1fr); }
-        }
-        
-        .grid-4 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-        
-        @media (min-width: 640px) {
-            .grid-4 { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (min-width: 1024px) {
-            .grid-4 { grid-template-columns: repeat(4, 1fr); }
-        }
-        
-        .grid-gallery {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .grid-gallery { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (min-width: 1024px) {
-            .grid-gallery { grid-template-columns: repeat(3, 1fr); }
-        }
-        
-        /* ========================================
-           COMPONENT: CARDS
-        ======================================== */
-        .card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            padding: 1.5rem;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-base);
-        }
-        
-        .card:hover {
-            box-shadow: var(--shadow-2xl);
-            transform: translateY(-0.5rem);
-        }
-        
-        .card-icon {
-            width: 4rem;
-            height: 4rem;
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--blue-900);
-            margin-bottom: 0.75rem;
-            text-align: center;
-        }
-        
-        .card-text {
-            color: var(--gray-600);
-            text-align: center;
-            font-size: 0.875rem;
-        }
-        
-        .card-bordered-blue { border-top: 4px solid var(--blue-800); }
-        .card-bordered-amber { border-top: 4px solid var(--amber-500); }
-        
-        /* ========================================
-           COMPONENT: VISI MISI
-        ======================================== */
-        .visi-misi-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--blue-800);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        @media (min-width: 640px) {
-            .visi-misi-title { font-size: 1.875rem; }
-        }
-        
-        .visi-misi-subtitle {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--blue-900);
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .visi-misi-text {
-            color: var(--gray-700);
-            line-height: 1.625;
-            font-size: 1.125rem;
-        }
-        
-        .check-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            color: var(--gray-700);
-        }
-        
-        .check-list li {
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .check-list i {
-            color: var(--blue-600);
-            margin-top: 0.25rem;
-            margin-right: 0.75rem;
-        }
-        
-        /* ========================================
-           COMPONENT: IMAGE
-        ======================================== */
-        .image-wrapper {
-            position: relative;
-            border-radius: var(--radius-2xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-2xl);
-            cursor: pointer;
-        }
-        
-        .image-wrapper img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            transition: transform var(--transition-slow);
-        }
-        
-        .image-wrapper:hover img {
-            transform: scale(1.05);
-        }
-        
-        .image-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(30, 58, 138, 0.4), transparent);
-        }
-        
-        .image-expand {
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: var(--radius-full);
-            padding: 0.75rem;
-            z-index: 2;
-        }
-        
-        /* ========================================
-           COMPONENT: ORGANISASI DKM
-        ======================================== */
-        .organisasi-section {
-            padding: 5rem 0;
-            background: var(--white);
-        }
-        
-        .organisasi-intro {
-            text-align: center;
-            max-width: 48rem;
-            margin: 0 auto 3rem;
-            color: var(--gray-600);
-            font-size: 1.125rem;
-        }
-        
-        .organisasi-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-        
-        @media (min-width: 640px) {
-            .organisasi-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (min-width: 1024px) {
-            .organisasi-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-        
-        .organisasi-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-base);
-            border-top: 4px solid var(--blue-800);
-        }
-        
-        .organisasi-card:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: var(--shadow-2xl);
-        }
-        
-        .organisasi-card.ketua {
-            border-top-color: var(--amber-500);
-            grid-column: 1 / -1;
-            max-width: 24rem;
-            margin: 0 auto;
-        }
-        
-        @media (min-width: 1024px) {
-            .organisasi-card.ketua {
-                grid-column: 1 / -1;
-            }
-        }
-        
-        .organisasi-avatar {
-            width: 6rem;
-            height: 6rem;
-            border-radius: var(--radius-full);
-            background: linear-gradient(135deg, var(--blue-100), var(--blue-200));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: var(--blue-800);
-            font-size: 2.5rem;
-            border: 4px solid var(--white);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .organisasi-card.ketua .organisasi-avatar {
-            width: 8rem;
-            height: 8rem;
-            background: linear-gradient(135deg, var(--amber-100), var(--amber-200));
-            color: var(--amber-600);
-            font-size: 3rem;
-        }
-        
-        .organisasi-name {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--blue-900);
-            margin-bottom: 0.25rem;
-        }
-        
-        .organisasi-card.ketua .organisasi-name {
-            font-size: 1.5rem;
-        }
-        
-        .organisasi-position {
-            display: inline-block;
-            background: var(--blue-50);
-            color: var(--blue-800);
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-full);
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        
-        .organisasi-card.ketua .organisasi-position {
-            background: var(--amber-100);
-            color: var(--amber-600);
-            font-size: 0.875rem;
-        }
-        
-        .organisasi-desc {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-            line-height: 1.5;
-        }
-        
-        /* Seksi Grid */
-        .seksi-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-        
-        @media (min-width: 640px) {
-            .seksi-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (min-width: 1024px) {
-            .seksi-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        
-        .seksi-card {
-            background: linear-gradient(to bottom right, var(--blue-50), var(--white));
-            border-radius: var(--radius-xl);
-            padding: 1.5rem;
-            border-left: 4px solid var(--blue-800);
-            transition: all var(--transition-base);
-        }
-        
-        .seksi-card:hover {
-            transform: translateX(0.5rem);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .seksi-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .seksi-icon {
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: var(--radius-full);
-            background: var(--blue-800);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-        
-        .seksi-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--blue-900);
-        }
-        
-        .seksi-koordinator {
-            font-size: 0.875rem;
-            color: var(--gray-700);
-            margin-bottom: 0.25rem;
-        }
-        
-        .seksi-desc {
-            font-size: 0.8125rem;
-            color: var(--gray-600);
-            line-height: 1.5;
-        }
-        
-        /* ========================================
-           COMPONENT: TABS
-        ======================================== */
-        .tabs-nav {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-        
-        @media (min-width: 640px) {
-            .tabs-nav { flex-direction: row; }
-        }
-        
-        .tab-btn {
-            padding: 1rem 2rem;
-            border-radius: var(--radius-full);
-            font-weight: 600;
-            transition: all var(--transition-base);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .tab-btn.active {
-            background: var(--blue-800);
-            color: var(--white);
-        }
-        
-        .tab-btn:not(.active) {
-            background: var(--gray-200);
-            color: var(--gray-700);
-        }
-        
-        .tab-btn:not(.active):hover {
-            background: var(--gray-300);
-        }
-        
-        /* ========================================
-           COMPONENT: KEGIATAN CARD
-        ======================================== */
-        .kegiatan-card {
-            background: linear-gradient(to bottom right, var(--blue-50), var(--white));
-            border-radius: var(--radius-xl);
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-base);
-            border-left: 4px solid var(--blue-800);
-        }
-        
-        .kegiatan-card:hover {
-            box-shadow: var(--shadow-2xl);
-        }
-        
-        .kegiatan-card.amber {
-            background: linear-gradient(to bottom right, var(--amber-50), var(--white));
-            border-left-color: var(--amber-500);
-        }
-        
-        .kegiatan-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .kegiatan-icon {
-            width: 3.5rem;
-            height: 3.5rem;
-            border-radius: var(--radius-full);
-            background: var(--blue-800);
-            color: var(--amber-400);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            font-size: 1.25rem;
-        }
-        
-        .kegiatan-card.amber .kegiatan-icon {
-            background: var(--amber-500);
-            color: var(--white);
-        }
-        
-        .kegiatan-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--blue-900);
-        }
-        
-        .kegiatan-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            color: var(--gray-700);
-        }
-        
-        .kegiatan-info p {
-            display: flex;
-            align-items: center;
-        }
-        
-        .kegiatan-info i {
-            margin-right: 0.5rem;
-            width: 1rem;
-        }
-        
-        .kegiatan-card .kegiatan-info i { color: var(--blue-600); }
-        .kegiatan-card.amber .kegiatan-info i { color: var(--amber-600); }
-        
-        .kegiatan-desc {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-            margin-top: 1rem;
-        }
-        
-        /* ========================================
-           COMPONENT: LAYANAN CARD
-        ======================================== */
-        .layanan-card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-base);
-            border-top: 4px solid var(--blue-800);
-        }
-        
-        .layanan-card:hover {
-            box-shadow: var(--shadow-2xl);
-            transform: translateY(-0.5rem);
-        }
-        
-        .layanan-card.amber {
-            border-top-color: var(--amber-500);
-        }
-        
-        .layanan-icon {
-            width: 4rem;
-            height: 4rem;
-            border-radius: var(--radius-full);
-            background: var(--blue-100);
-            color: var(--blue-800);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .layanan-card.amber .layanan-icon {
-            background: var(--amber-100);
-            color: var(--amber-600);
-        }
-        
-        .layanan-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--blue-900);
-            margin-bottom: 0.75rem;
-            text-align: center;
-        }
-        
-        .layanan-desc {
-            color: var(--gray-600);
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        
-        .layanan-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-        }
-        
-        .layanan-contact p {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* ========================================
-           COMPONENT: GALERI
-        ======================================== */
-        .galeri-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius-xl);
-            cursor: pointer;
-            height: 16rem;
-        }
-        
-        @media (min-width: 640px) {
-            .galeri-item { height: 20rem; }
-        }
-        
-        @media (min-width: 1024px) {
-            .galeri-item.large {
-                grid-row: span 2;
-                height: 100%;
-            }
-        }
-        
-        .galeri-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-slow);
-        }
-        
-        .galeri-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .galeri-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(30, 58, 138, 0.9), transparent 60%);
-            opacity: 0;
-            transition: opacity var(--transition-base);
-            display: flex;
-            align-items: flex-end;
-            padding: 1.5rem;
-        }
-        
-        .galeri-item:hover .galeri-overlay {
-            opacity: 1;
-        }
-        
-        .galeri-overlay h4 {
-            font-weight: 700;
-            font-size: 1.125rem;
-            color: var(--white);
-        }
-        
-        .galeri-overlay p {
-            font-size: 0.875rem;
-            color: var(--white);
-        }
-        
-        /* ========================================
-           COMPONENT: KONTAK
-        ======================================== */
-        .kontak-card {
-            background: linear-gradient(to bottom right, var(--blue-50), var(--white));
-            border-radius: var(--radius-2xl);
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            height: 100%;
-        }
-        
-        .kontak-card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--blue-900);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .kontak-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        .kontak-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .kontak-icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: var(--radius-full);
-            background: var(--blue-800);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            flex-shrink: 0;
-            font-size: 1.125rem;
-        }
-        
-        .kontak-icon.green { background: var(--green-600); }
-        .kontak-icon.amber { background: var(--amber-500); }
-        .kontak-icon.pink { background: linear-gradient(to bottom right, var(--purple-500), var(--pink-500)); }
-        
-        .kontak-title {
-            font-weight: 700;
-            color: var(--blue-900);
-            margin-bottom: 0.25rem;
-        }
-        
-        .kontak-text {
-            color: var(--gray-700);
-        }
-        
-        .kontak-text a {
-            color: var(--gray-700);
-            transition: color var(--transition-fast);
-        }
-        
-        .kontak-text a:hover {
-            color: var(--blue-800);
-        }
-        
-        .kontak-subtext {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-            margin-top: 0.25rem;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-        
-        .social-icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.125rem;
-            transition: transform var(--transition-fast);
-            box-shadow: var(--shadow-md);
-            cursor: pointer;
-        }
-        
-        .social-icon:hover {
-            transform: scale(1.1);
-        }
-        
-        .social-icon.instagram { background: linear-gradient(to bottom right, var(--purple-500), var(--pink-500)); }
-        
-        .maps-card {
-            background: var(--white);
-            border-radius: var(--radius-2xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            height: 100%;
-        }
-        
-        .maps-header {
-            padding: 1.5rem;
-            background: var(--blue-900);
-            color: var(--white);
-        }
-        
-        .maps-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .maps-header h3 i { color: var(--amber-400); }
-        
-        .maps-header p {
-            color: var(--blue-100);
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-        }
-        
-        .maps-iframe {
-            width: 100%;
-            height: 450px;
-            border: 0;
-        }
-        
-        .maps-footer {
-            padding: 1rem;
-            background: var(--gray-50);
-            border-top: 1px solid var(--gray-200);
-        }
-        
-        .maps-footer a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blue-800);
-            font-weight: 600;
-            transition: color var(--transition-fast);
-        }
-        
-        .maps-footer a:hover {
-            color: var(--amber-500);
-        }
-        
-        .maps-footer a i {
-            margin-right: 0.5rem;
-        }
-        
-        /* ========================================
-           COMPONENT: FOOTER
-        ======================================== */
-        .footer {
-            background: var(--blue-900);
-            color: var(--white);
-            padding-top: 4rem;
-            padding-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 0;
-            width: 30rem;
-            height: 30rem;
-            background: var(--amber-400);
-            border-radius: 50%;
-            opacity: 0.05;
-            filter: blur(3rem);
-        }
-        
-        .footer::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 30rem;
-            height: 30rem;
-            background: var(--blue-400);
-            border-radius: 50%;
-            opacity: 0.08;
-            filter: blur(3rem);
-        }
-        
-        .footer > .container {
-            position: relative;
-            z-index: 10;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (min-width: 1024px) {
-            .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-logo-icon {
-            width: 3.5rem;
-            height: 3.5rem;
-            background: var(--amber-500);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-        }
-        
-        .footer-logo-text h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-        
-        .footer-logo-text p {
-            font-size: 0.75rem;
-            color: var(--blue-200);
-        }
-        
-        .footer-desc {
-            color: var(--blue-100);
-            font-size: 0.875rem;
-            line-height: 1.625;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 0.75rem;
-        }
-        
-        .footer-social a {
-            width: 2.5rem;
-            height: 2.5rem;
-            background: var(--blue-800);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background var(--transition-fast);
-        }
-        
-        .footer-social a:hover {
-            background: var(--amber-500);
-        }
-        
-        .footer-title {
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .footer-title i { color: var(--amber-400); }
-        
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .footer-links a,
-        .footer-links button {
-            color: var(--blue-100);
-            font-size: 0.875rem;
-            transition: color var(--transition-fast);
-            display: flex;
-            align-items: center;
-            text-align: left;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            font-family: inherit;
-        }
-        
-        .footer-links a:hover,
-        .footer-links button:hover {
-            color: var(--amber-400);
-        }
-        
-        .footer-links i {
-            font-size: 0.75rem;
-            margin-right: 0.5rem;
-        }
-        
-        .footer-links .check-icon {
-            color: var(--amber-400);
-        }
-        
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            font-size: 0.875rem;
-        }
-        
-        .footer-contact li {
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .footer-contact i {
-            color: var(--amber-400);
-            margin-right: 0.75rem;
-            margin-top: 0.25rem;
-        }
-        
-        .footer-contact a {
-            color: var(--blue-100);
-            transition: color var(--transition-fast);
-        }
-        
-        .footer-contact a:hover {
-            color: var(--amber-400);
-        }
-        
-        .footer-ayat {
-            border-top: 1px solid var(--blue-800);
-            padding-top: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-ayat-box {
-            background: rgba(30, 64, 175, 0.5);
-            border-radius: var(--radius-2xl);
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .footer-ayat-arabic {
-            font-family: var(--font-arabic);
-            font-style: italic;
-            font-size: 1.25rem;
-            color: var(--amber-400);
-            margin-bottom: 0.5rem;
-        }
-        
-        @media (min-width: 640px) {
-            .footer-ayat-arabic { font-size: 1.5rem; }
-        }
-        
-        .footer-ayat-translation {
-            color: var(--blue-100);
-            font-size: 0.875rem;
-        }
-        
-        .footer-copyright {
-            border-top: 1px solid var(--blue-800);
-            padding-top: 2rem;
-            text-align: center;
-        }
-        
-        .footer-copyright p {
-            color: var(--blue-200);
-            font-size: 0.875rem;
-        }
-        
-        .footer-copyright .brand {
-            font-weight: 700;
-            color: var(--amber-400);
-        }
-        
-        .footer-copyright .heart {
-            color: var(--red-500);
-        }
-        
-        .footer-copyright .sub {
-            color: var(--blue-300);
-            font-size: 0.75rem;
-            margin-top: 0.5rem;
-        }
-        
-        /* ========================================
-           COMPONENT: LIGHTBOX
-        ======================================== */
-        .lightbox-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 150;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity var(--transition-base), visibility var(--transition-base);
-        }
-        
-        .lightbox-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .lightbox-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 3rem;
-            height: 3rem;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            transition: background var(--transition-fast);
-            z-index: 10;
-            border: none;
-            cursor: pointer;
-            font-size: 1.25rem;
-        }
-        
-        .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
-        .lightbox-content {
-            text-align: center;
-            padding: 1rem;
-        }
-        
-        .lightbox-content img {
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: var(--radius-md);
-            margin-bottom: 1rem;
-        }
-        
-        .lightbox-caption {
-            color: var(--white);
-            font-size: 1.125rem;
-            font-weight: 600;
-        }
-        
-        /* Notification */
-        .notification-toast {
-            position: fixed;
-            top: 6rem;
-            right: 1rem;
-            z-index: 200;
-            padding: 1rem 1.5rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-2xl);
-            color: var(--white);
-            max-width: 24rem;
-            animation: slideInRight 0.3s ease forwards;
-        }
-        
-        .notification-toast.success { background: var(--blue-600); }
-        .notification-toast.error { background: var(--red-600); }
-        .notification-toast.info { background: var(--blue-800); }
-        
-        .notification-toast .notif-content {
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .notification-toast .notif-content i {
-            font-size: 1.25rem;
-            margin-right: 0.75rem;
-            margin-top: 0.125rem;
-        }
-        
-        .notification-toast .notif-content span {
-            flex: 1;
-        }
-        
-        @keyframes slideInRight {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        .flex-shrink-0 { flex-shrink: 0; }
-        .flex-1 { flex: 1; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masjid Al-Furqon - Membangun Generasi Rabbani</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/poppins@latest/latin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/amiri@latest/latin.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <!-- ==================== NAVBAR ==================== -->
-    <nav id="navbar" class="navbar">
-        <div class="container">
-            <div class="navbar-inner">
-                
-                <div class="navbar-logo" data-aos="fade-right">
-                    <div class="logo-icon">
-                        <i class="fas fa-mosque"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h1>Masjid Al-Furqon</h1>
-                        <p>Membangun Generasi Rabbani</p>
-                    </div>
-                </div>
-                
-                <div class="navbar-menu" data-aos="fade-down">
-                    <a href="#beranda">Beranda</a>
-                    <a href="#profil">Profil</a>
-                    <a href="#organisasi">Organisasi</a>
-                    <a href="#jadwal">Jadwal</a>
-                    <a href="#layanan">Layanan</a>
-                    <a href="#galeri">Galeri</a>
-                    <a href="#kontak">Kontak</a>
-                </div>
-                
-                <!-- Tombol WhatsApp di Navbar Desktop -->
-                <div class="navbar-actions" data-aos="fade-left">
-                    <a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Chat Kami</span>
-                    </a>
-                </div>
-                
-                <button id="hamburger-btn" class="hamburger-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-        
-        <div id="mobile-menu" class="mobile-menu">
-            <div class="mobile-menu-inner">
-                <a href="#beranda">Beranda</a>
-                <a href="#profil">Profil</a>
-                <a href="#organisasi">Organisasi</a>
-                <a href="#jadwal">Jadwal</a>
-                <a href="#layanan">Layanan</a>
-                <a href="#galeri">Galeri</a>
-                <a href="#kontak">Kontak</a>
-                <!-- Tombol WhatsApp di Mobile Menu -->
-                <a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp btn-block">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>Chat WhatsApp</span>
-                </a>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- ==================== HERO ==================== -->
-    <section id="beranda" class="hero">
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000">
-                Selamat Datang di<br>
-                <span class="highlight">Masjid Al-Furqon</span>
-            </h1>
-            
-            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                "Membangun Generasi Rabbani, Menebar Rahmat bagi Semesta"
-            </p>
-            
-            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
-                <a href="#jadwal" class="btn btn-primary btn-lg">
-                    <i class="fas fa-clock"></i>
-                    <span>Lihat Jadwal Sholat</span>
-                </a>
-                
-                <button onclick="showNotification('Pendaftaran TPA akan segera dibuka! Hubungi sekretariat untuk info lebih lanjut.', 'info')" class="btn btn-white btn-lg">
-                    <i class="fas fa-book-quran"></i>
-                    <span>Daftar TPA</span>
-                </button>
-                
-                <a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp btn-lg">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>Hubungi Kami</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-    
-    <!-- ==================== JADWAL SHOLAT ==================== -->
-    <section id="jadwal-widget" class="sholat-widget">
-        <div class="container">
-            <div class="sholat-card-container" data-aos="fade-up" data-aos-duration="1000">
-                
-                <div class="sholat-header">
-                    <h2>
-                        <i class="fas fa-mosque text-amber-500 mr-2"></i>
-                        Jadwal Sholat Hari Ini
-                    </h2>
-                    <p class="text-gray-600" id="current-date">Kamis, 2 Juli 2026</p>
-                </div>
-                
-                <div class="sholat-grid">
-                    <div class="sholat-card subuh" onclick="showNotification('Subuh: 04:30 WIB', 'info')">
-                        <div class="sholat-icon bg-blue-800">
-                            <i class="fas fa-moon"></i>
-                        </div>
-                        <h3 class="sholat-name">Subuh</h3>
-                        <p class="sholat-time">04:30</p>
-                        <p class="sholat-zone">WIB</p>
-                    </div>
-                    
-                    <div class="sholat-card dzuhur" onclick="showNotification('Dzuhur: 12:00 WIB', 'info')">
-                        <div class="sholat-icon bg-amber-500">
-                            <i class="fas fa-sun"></i>
-                        </div>
-                        <h3 class="sholat-name">Dzuhur</h3>
-                        <p class="sholat-time">12:00</p>
-                        <p class="sholat-zone">WIB</p>
-                    </div>
-                    
-                    <div class="sholat-card ashar" onclick="showNotification('Ashar: 15:15 WIB', 'info')">
-                        <div class="sholat-icon bg-orange-500">
-                            <i class="fas fa-cloud-sun"></i>
-                        </div>
-                        <h3 class="sholat-name">Ashar</h3>
-                        <p class="sholat-time">15:15</p>
-                        <p class="sholat-zone">WIB</p>
-                    </div>
-                    
-                    <div class="sholat-card maghrib" onclick="showNotification('Maghrib: 17:55 WIB', 'info')">
-                        <div class="sholat-icon bg-red-500">
-                            <i class="fas fa-cloud-moon"></i>
-                        </div>
-                        <h3 class="sholat-name">Maghrib</h3>
-                        <p class="sholat-time">17:55</p>
-                        <p class="sholat-zone">WIB</p>
-                    </div>
-                    
-                    <div class="sholat-card isya" onclick="showNotification('Isya: 19:05 WIB', 'info')">
-                        <div class="sholat-icon bg-indigo-600">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3 class="sholat-name">Isya</h3>
-                        <p class="sholat-time">19:05</p>
-                        <p class="sholat-zone">WIB</p>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-6 pt-6 border-t">
-                    <p class="text-sm text-gray-600">
-                        <i class="fas fa-info-circle text-blue-800 mr-1"></i>
-                        Jadwal sholat dapat berubah sesuai dengan perhitungan astronomi dan keputusan MUI setempat
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ==================== PROFIL & FASILITAS ==================== -->
-    <section id="profil" class="section section-bg-gray">
-        <div class="container">
-            
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Tentang Masjid Al-Furqon</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="grid-2 items-center mb-20">
-                
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <h3 class="visi-misi-title">
-                        <i class="fas fa-mosque text-amber-500"></i>
-                        Visi & Misi
-                    </h3>
-                    
-                    <div class="mb-8">
-                        <h4 class="visi-misi-subtitle">
-                            <i class="fas fa-eye text-amber-500"></i>
-                            Visi
-                        </h4>
-                        <p class="visi-misi-text">
-                            Menjadi masjid yang menjadi pusat peradaban Islam, tempat pembinaan umat, 
-                            dan sumber inspirasi bagi masyarakat untuk mencapai kebahagiaan dunia dan akhirat.
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h4 class="visi-misi-subtitle">
-                            <i class="fas fa-bullseye text-amber-500"></i>
-                            Misi
-                        </h4>
-                        <ul class="check-list">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Menyelenggarakan ibadah sholat 5 waktu dan sholat Jumat dengan khusyuk</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Mengadakan kajian Islam dan pendidikan Al-Quran untuk semua usia</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Memberikan layanan sosial dan kemanusiaan bagi masyarakat</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Membangun ukhuwah islamiyah dan mempererat silaturahmi umat</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div data-aos="fade-left" data-aos-duration="1000">
-                    <div class="image-wrapper" onclick="openLightbox('https://image.qwenlm.ai/public_source/b9009866-5dfd-4024-8e02-fe82d714ed7a/11b7dfc92-8847-4960-bb7c-478393b338db.png', 'Masjid Al-Furqon')">
-                        <img src="https://image.qwenlm.ai/public_source/b9009866-5dfd-4024-8e02-fe82d714ed7a/11b7dfc92-8847-4960-bb7c-478393b338db.png" alt="Masjid Al-Furqon">
-                        <div class="image-expand">
-                            <i class="fas fa-expand text-blue-800"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div data-aos="fade-up" data-aos-duration="1000">
-                <h3 class="section-title text-center mb-8">
-                    <i class="fas fa-building text-amber-500 mr-2"></i>
-                    Fasilitas Kami
-                </h3>
-                
-                <div class="grid-4">
-                    <div class="card card-bordered-blue" onclick="showNotification('Ruang Sholat Utama - Kapasitas 1000 jamaah', 'info')">
-                        <div class="card-icon bg-blue-100 text-blue-800">
-                            <i class="fas fa-pray"></i>
-                        </div>
-                        <h4 class="card-title">Ruang Sholat Utama</h4>
-                        <p class="card-text">Kapasitas 1000 jamaah dengan pendingin udara dan sistem audio berkualitas tinggi</p>
-                    </div>
-                    
-                    <div class="card card-bordered-amber" onclick="showNotification('Tempat Wudhu - Terpisah pria & wanita', 'info')">
-                        <div class="card-icon bg-amber-100 text-amber-600">
-                            <i class="fas fa-faucet"></i>
-                        </div>
-                        <h4 class="card-title">Tempat Wudhu</h4>
-                        <p class="card-text">Terpisah antara pria dan wanita dengan air bersih dan fasilitas lengkap</p>
-                    </div>
-                    
-                    <div class="card card-bordered-blue" onclick="showNotification('Lahan Parkir - Keamanan 24 jam', 'info')">
-                        <div class="card-icon bg-blue-100 text-blue-800">
-                            <i class="fas fa-parking"></i>
-                        </div>
-                        <h4 class="card-title">Lahan Parkir</h4>
-                        <p class="card-text">Area parkir luas untuk mobil dan motor dengan keamanan 24 jam</p>
-                    </div>
-                    
-                    <div class="card card-bordered-amber" onclick="showNotification('TPA & Perpustakaan - Buka setiap hari', 'info')">
-                        <div class="card-icon bg-amber-100 text-amber-600">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <h4 class="card-title">TPA & Perpustakaan</h4>
-                        <p class="card-text">Tempat pendidikan Al-Quran anak dan koleksi buku-buku Islam lengkap</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ==================== SUSUNAN ORGANISASI DKM ==================== -->
-    <section id="organisasi" class="organisasi-section">
-        <div class="container">
-            
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Susunan Organisasi DKM</h2>
-                <div class="section-divider"></div>
-                <p class="section-subtitle">Dewan Kemakmuran Masjid Al-Furqon Periode 2024 - 2027</p>
-            </div>
-            
-            <p class="organisasi-intro" data-aos="fade-up">
-                DKM (Dewan Kemakmuran Masjid) adalah lembaga yang bertanggung jawab atas pengelolaan dan kemakmuran Masjid Al-Furqon. 
-                Berikut adalah susunan pengurus yang amanah dalam menjalankan tugasnya.
-            </p>
-            
-            <!-- Pembina & Penasehat -->
-            <div class="mb-8" data-aos="fade-up">
-                <h3 class="text-center text-2xl font-bold text-blue-900 mb-6">
-                    <i class="fas fa-crown text-amber-500 mr-2"></i>
-                    Pembina & Penasehat
-                </h3>
-                <div class="grid-3">
-                    <div class="organisasi-card">
-                        <div class="organisasi-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <span class="organisasi-position">Pembina</span>
-                        <h4 class="organisasi-name">H. Ahmad Suharto, S.Ag.</h4>
-                        <p class="organisasi-desc">Tokoh masyarakat dan tokoh agama setempat</p>
-                    </div>
-                    
-                    <div class="organisasi-card">
-                        <div class="organisasi-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <span class="organisasi-position">Penasehat</span>
-                        <h4 class="organisasi-name">Ust. H. Mahmud, Lc.</h4>
-                        <p class="organisasi-desc">Penasihat syariah dan dakwah</p>
-                    </div>
-                    
-                    <div class="organisasi-card">
-                        <div class="organisasi-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <span class="organisasi-position">Penasehat</span>
-                        <h4 class="organisasi-name">H. Budi Santoso</h4>
-                        <p class="organisasi-desc">Tokoh masyarakat Dusun Penawangan</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Ketua, Wakil, Sekretaris, Bendahara -->
-            <div class="mb-8" data-aos="fade-up">
-                <h3 class="text-center text-2xl font-bold text-blue-900 mb-6">
-                    <i class="fas fa-users-cog text-amber-500 mr-2"></i>
-                    Pengurus Inti DKM
-                </h3>
-                <div class="organisasi-grid">
-                    <div class="organisasi-card ketua">
-                        <div class="organisasi-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <span class="organisasi-position">Ketua DKM</span>
-                        <h4 class="organisasi-name">H. Muhammad Yusuf, S.Pd.I.</h4>
-                        <p class="organisasi-desc">Berpengalaman lebih dari 15 tahun dalam pengelolaan masjid dan dakwah Islam</p>
-                    </div>
-                    
-                    <div class="organisasi-card">
-                        <div class="organisasi-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <span class="organisasi-position">Wakil Ketua</span>
-                        <h4 class="organisasi-name">Ir. Slamet Riyadi</h4>
-                        <p class="organisasi-desc">Mendampingi ketua dalam koordinasi kegiatan</p>
-                    </div>
-                    
-                    <div class="organisasi-card">
-                        <div class="organisasi-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <span class="organisasi-position">Sekretaris</span>
-                        <h4 class="organisasi-name">Ahmad Fauzi, S.Pd.</h4>
-                        <p class="organisasi-desc">Mengelola administrasi dan kesekretariatan DKM</p>
-                    </div>
-                    
-                    <div class="organisasi-card">
-                        <div class="organisasi-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <span class="organisasi-position">Bendahara</span>
-                        <h4 class="organisasi-name">Siti Aminah, S.E.</h4>
-                        <p class="organisasi-desc">Mengelola keuangan masjid secara transparan dan akuntabel</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Seksi-seksi -->
-            <div data-aos="fade-up">
-                <h3 class="text-center text-2xl font-bold text-blue-900 mb-6">
-                    <i class="fas fa-sitemap text-amber-500 mr-2"></i>
-                    Seksi-seksi DKM
-                </h3>
-                
-                <div class="seksi-grid">
-                    <div class="seksi-card">
-                        <div class="seksi-header">
-                            <div class="seksi-icon"><i class="fas fa-pray"></i></div>
-                            <h4 class="seksi-title">Seksi Ibadah & Dakwah</h4>
-                        </div>
-                        <p class="seksi-koordinator"><strong>Koordinator:</strong> Ust. Rohmat, S.Ag.</p>
-                        <p class="seksi-desc">Mengelola kegiatan sholat berjamaah, kajian rutin, khutbah Jumat, dan dakwah Islam</p>
-                    </div>
-                    
-                    <div class="seksi-card">
-                        <div class="seksi-header">
-                            <div class="seksi-icon"><i class="fas fa-book-quran"></i></div>
-                            <h4 class="seksi-title">Seksi Pendidikan & TPA</h4>
-                        </div>
-                        <p class="seksi-koordinator"><strong>Koordinator:</strong> Ust. Nur Hidayah</p>
-                        <p class="seksi-desc">Mengelola Taman Pendidikan Al-Quran, majelis ta'lim, dan kegiatan pendidikan umat</p>
-                    </div>
-                    
-                    <div class="seksi-card">
-                        <div class="seksi-header">
-                            <div class="seksi-icon"><i class="fas fa-hands-helping"></i></div>
-                            <h4 class="seksi-title">Seksi Sosial & Kemanusiaan</h4>
-                        </div>
-                        <p class="seksi-koordinator"><strong>Koordinator:</strong> Bambang Wijaya</p>
-                        <p class="seksi-desc">Mengelola santunan anak yatim, bantuan dhuafa, dan kegiatan sosial kemasyarakatan</p>
-                    </div>
-                    
-                    <div class="seksi-card">
-                        <div class="seksi-header">
-                            <div class="seksi-icon"><i class="fas fa-tools"></i></div>
-                            <h4 class="seksi-title">Seksi Sarana & Prasarana</h4>
-                        </div>
-                        <p class="seksi-koordinator"><strong>Koordinator:</strong> Joko Susilo</p>
-                        <p class="seksi-desc">Mengelola perawatan gedung, fasilitas, dan kebersihan masjid</p>
-                    </div>
-                    
-                    <div class="seksi-card">
-                        <div class="seksi-header">
-                            <div class="seksi-icon"><i class="fas fa-bullhorn"></i></div>
-                            <h4 class="seksi-title">Seksi Humas & Informasi</h4>
-                        </div>
-                        <p class="seksi-koordinator"><strong>Koordinator:</strong> Rizky Pratama</p>
-                        <p class="seksi-desc">Mengelola komunikasi, media sosial, dan publikasi kegiatan masjid</p>
-                    </div>
-                    
-                    <div class="seksi-card">
-                        <div class="seksi-header">
-                            <div class="seksi-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                            <h4 class="seksi-title">Seksi Keuangan & Infaq</h4>
-                        </div>
-                        <p class="seksi-koordinator"><strong>Koordinator:</strong> Dewi Sartika</p>
-                        <p class="seksi-desc">Mengelola infaq, shodaqoh, dan dana sosial masjid secara transparan</p>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-    
-    <!-- ==================== KEGIATAN & LAYANAN ==================== -->
-    <section id="layanan" class="section section-bg-gray">
-        <div class="container">
-            
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Kegiatan & Layanan</h2>
-                <div class="section-divider"></div>
-                <p class="section-subtitle">Berbagai kegiatan rutin dan layanan untuk umat</p>
-            </div>
-            
-            <div class="tabs-nav" data-aos="fade-up" data-aos-delay="200">
-                <button id="tab-kegiatan" class="tab-btn active">
-                    <i class="fas fa-calendar-alt mr-2"></i>
-                    Kegiatan Rutin
-                </button>
-                <button id="tab-layanan" class="tab-btn">
-                    <i class="fas fa-hands-helping mr-2"></i>
-                    Layanan Umat
-                </button>
-            </div>
-            
-            <div id="content-kegiatan" class="tab-content">
-                <div class="grid-3">
-                    
-                    <div class="kegiatan-card">
-                        <div class="kegiatan-header">
-                            <div class="kegiatan-icon">
-                                <i class="fas fa-sun"></i>
-                            </div>
-                            <h3 class="kegiatan-title">Kajian Subuh</h3>
-                        </div>
-                        <div class="kegiatan-info">
-                            <p><i class="fas fa-clock"></i><span>Setiap Hari, 05:00 - 06:00 WIB</span></p>
-                            <p><i class="fas fa-map-marker-alt"></i><span>Ruang Sholat Utama</span></p>
-                            <p><i class="fas fa-user-tie"></i><span>Ustadz Ahmad Fauzi, Lc.</span></p>
-                        </div>
-                        <p class="kegiatan-desc">Kajian tafsir Al-Quran dan hadits dengan pembahasan tema-tema keislaman yang relevan dengan kehidupan sehari-hari.</p>
-                        <button onclick="showNotification('Pendaftaran Kajian Subuh akan segera dibuka!', 'info')" class="btn btn-primary btn-block mt-4">
-                            <i class="fas fa-user-plus"></i> Daftar Kajian
-                        </button>
-                    </div>
-                    
-                    <div class="kegiatan-card amber">
-                        <div class="kegiatan-header">
-                            <div class="kegiatan-icon">
-                                <i class="fas fa-cloud-moon"></i>
-                            </div>
-                            <h3 class="kegiatan-title">Kajian Maghrib</h3>
-                        </div>
-                        <div class="kegiatan-info">
-                            <p><i class="fas fa-clock"></i><span>Senin & Kamis, 18:00 - 19:30 WIB</span></p>
-                            <p><i class="fas fa-map-marker-alt"></i><span>Ruang Sholat Utama</span></p>
-                            <p><i class="fas fa-user-tie"></i><span>Ustadz Dr. Muhammad Rizki</span></p>
-                        </div>
-                        <p class="kegiatan-desc">Kajian fiqih kontemporer dan masalah-masalah keagamaan yang sering dihadapi masyarakat modern.</p>
-                        <button onclick="showNotification('Pendaftaran Kajian Maghrib akan segera dibuka!', 'info')" class="btn btn-amber btn-block mt-4">
-                            <i class="fas fa-user-plus"></i> Daftar Kajian
-                        </button>
-                    </div>
-                    
-                    <div class="kegiatan-card">
-                        <div class="kegiatan-header">
-                            <div class="kegiatan-icon">
-                                <i class="fas fa-child"></i>
-                            </div>
-                            <h3 class="kegiatan-title">TPA Anak</h3>
-                        </div>
-                        <div class="kegiatan-info">
-                            <p><i class="fas fa-clock"></i><span>Selasa, Rabu, Jumat, 15:30 - 17:00 WIB</span></p>
-                            <p><i class="fas fa-map-marker-alt"></i><span>Ruang TPA & Perpustakaan</span></p>
-                            <p><i class="fas fa-user-tie"></i><span>Tim Pengajar TPA</span></p>
-                        </div>
-                        <p class="kegiatan-desc">Pendidikan Al-Quran, hadits, fiqih, dan akhlak untuk anak usia 5-12 tahun dengan metode pembelajaran yang menyenangkan.</p>
-                        <button onclick="showNotification('Pendaftaran TPA akan segera dibuka! Hubungi sekretariat untuk info lebih lanjut.', 'info')" class="btn btn-primary btn-block mt-4">
-                            <i class="fas fa-user-plus"></i> Daftar Sekarang
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="content-layanan" class="tab-content hidden">
-                <div class="grid-3">
-                    
-                    <div class="layanan-card">
-                        <div class="layanan-icon">
-                            <i class="fas fa-ring"></i>
-                        </div>
-                        <h3 class="layanan-title">Layanan Pernikahan</h3>
-                        <p class="layanan-desc">Konsultasi dan pendampingan untuk calon pengantin muslim, termasuk bimbingan pra-nikah dan administrasi nikah.</p>
-                        <div class="layanan-contact">
-                            <p><i class="fas fa-phone text-blue-600"></i><span>Hubungi: +62 813-2873-0880</span></p>
-                            <p><i class="fas fa-envelope text-blue-600"></i><span>alfurqonm94@gmail.com</span></p>
-                        </div>
-                        <a href="https://api.whatsapp.com/send/?phone=6281328730880&text=Assalamualaikum,%20saya%20ingin%20konsultasi%20layanan%20pernikahan&type=phone_number&app_absent=0" target="_blank" class="btn btn-primary btn-block mt-4">
-                            <i class="fab fa-whatsapp"></i> Chat via WhatsApp
-                        </a>
-                    </div>
-                    
-                    <div class="layanan-card amber">
-                        <div class="layanan-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3 class="layanan-title">Pengurusan Jenazah</h3>
-                        <p class="layanan-desc">Layanan pemulasaran jenazah sesuai syariat Islam (memandikan, mengkafani, mensholatkan) 24 jam.</p>
-                        <div class="layanan-contact">
-                            <p><i class="fas fa-phone text-amber-600"></i><span>Emergency: +62 813-2873-0880</span></p>
-                            <p><i class="fas fa-clock text-amber-600"></i><span>Tersedia 24 Jam</span></p>
-                        </div>
-                        <a href="https://api.whatsapp.com/send/?phone=6281328730880&text=Assalamualaikum,%20saya%20membutuhkan%20layanan%20pengurusan%20jenazah&type=phone_number&app_absent=0" target="_blank" class="btn btn-amber btn-block mt-4">
-                            <i class="fab fa-whatsapp"></i> Hubungi Emergency
-                        </a>
-                    </div>
-                    
-                    <div class="layanan-card">
-                        <div class="layanan-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h3 class="layanan-title">Konsultasi Syariah</h3>
-                        <p class="layanan-desc">Layanan konsultasi masalah keagamaan, fiqih, dan kehidupan keluarga bersama ustadz berpengalaman.</p>
-                        <div class="layanan-contact">
-                            <p><i class="fas fa-calendar text-blue-600"></i><span>Sabtu, 09:00 - 12:00 WIB</span></p>
-                            <p><i class="fas fa-map-marker-alt text-blue-600"></i><span>Ruang Konsultasi Lt. 2</span></p>
-                        </div>
-                        <a href="https://api.whatsapp.com/send/?phone=6281328730880&text=Assalamualaikum,%20saya%20ingin%20konsultasi%20syariah&type=phone_number&app_absent=0" target="_blank" class="btn btn-primary btn-block mt-4">
-                            <i class="fab fa-whatsapp"></i> Chat via WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ==================== GALERI ==================== -->
-    <section id="galeri" class="section section-bg-white">
-        <div class="container">
-            
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Dokumentasi Kegiatan</h2>
-                <div class="section-divider"></div>
-                <p class="section-subtitle">Momen berharga dari berbagai kegiatan Masjid Al-Furqon</p>
-            </div>
-            
-            <div class="grid-gallery" data-aos="fade-up">
-                <div class="galeri-item large" onclick="openLightbox('https://image.qwenlm.ai/public_source/b9009866-5dfd-4024-8e02-fe82d714ed7a/11b7dfc92-8847-4960-bb7c-478393b338db.png', 'Masjid Al-Furqon')">
-                    <img src="https://image.qwenlm.ai/public_source/b9009866-5dfd-4024-8e02-fe82d714ed7a/11b7dfc92-8847-4960-bb7c-478393b338db.png" alt="Masjid Al-Furqon">
-                    <div class="galeri-overlay">
-                        <div>
-                            <h4>Masjid Al-Furqon</h4>
-                            <p>Tampak depan masjid yang megah</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="galeri-item" onclick="openLightbox('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=1600&h=1200&fit=crop', 'Kajian Islam')">
-                    <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=800&h=600&fit=crop" alt="Kajian Islam">
-                    <div class="galeri-overlay">
-                        <div>
-                            <h4>Kajian Islam</h4>
-                            <p>Kajian rutin bersama ustadz</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="galeri-item" onclick="openLightbox('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=1600&h=1200&fit=crop', 'Arsitektur Islami')">
-                    <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&h=600&fit=crop" alt="Arsitektur Masjid">
-                    <div class="galeri-overlay">
-                        <div>
-                            <h4>Arsitektur Islami</h4>
-                            <p>Keindahan ornamen khas Islami</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="galeri-item" onclick="openLightbox('https://images.unsplash.com/photo-1564769625905-50e93615e769?w=1600&h=1200&fit=crop', 'Kegiatan TPA')">
-                    <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&h=600&fit=crop" alt="Kegiatan TPA">
-                    <div class="galeri-overlay">
-                        <div>
-                            <h4>Kegiatan TPA</h4>
-                            <p>Pendidikan Al-Quran untuk anak</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="galeri-item" onclick="openLightbox('https://images.unsplash.com/photo-1519817914152-22f2e10a7a0e?w=1600&h=1200&fit=crop', 'Sholat Berjamaah')">
-                    <img src="https://images.unsplash.com/photo-1519817914152-22f2e10a7a0e?w=800&h=600&fit=crop" alt="Sholat Berjamaah">
-                    <div class="galeri-overlay">
-                        <div>
-                            <h4>Sholat Berjamaah</h4>
-                            <p>Keindahan sholat berjamaah</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ==================== KONTAK ==================== -->
-    <section id="kontak" class="section section-bg-gray">
-        <div class="container">
-            
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Hubungi Kami</h2>
-                <div class="section-divider"></div>
-                <p class="section-subtitle">Kami siap melayani Anda dengan senang hati</p>
-            </div>
-            
-            <div class="grid-2">
-                
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <div class="kontak-card">
-                        <h3 class="kontak-card-title">
-                            <i class="fas fa-address-book text-amber-500"></i>
-                            Informasi Kontak
-                        </h3>
-                        
-                        <div class="kontak-item">
-                            <div class="kontak-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <h4 class="kontak-title">Alamat Masjid</h4>
-                                <p class="kontak-text">Dusun Penawangan, RT.02/RW.01, Penawangan, Tawangsari, Kec. Wonosobo, Kabupaten Wonosobo, Jawa Tengah 56313</p>
-                            </div>
-                        </div>
-                        
-                        <div class="kontak-item">
-                            <div class="kontak-icon green"><i class="fab fa-whatsapp"></i></div>
-                            <div>
-                                <h4 class="kontak-title">WhatsApp Sekretariat</h4>
-                                <p class="kontak-text"><a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank">+62 813-2873-0880</a></p>
-                                <p class="kontak-subtext">Senin - Sabtu, 08:00 - 17:00 WIB</p>
-                            </div>
-                        </div>
-                        
-                        <div class="kontak-item">
-                            <div class="kontak-icon amber"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <h4 class="kontak-title">Email</h4>
-                                <p class="kontak-text"><a href="mailto:alfurqonm94@gmail.com">alfurqonm94@gmail.com</a></p>
-                                <p class="kontak-subtext">Respon dalam 1x24 jam</p>
-                            </div>
-                        </div>
-                        
-                        <div class="kontak-item">
-                            <div class="kontak-icon pink"><i class="fab fa-instagram"></i></div>
-                            <div>
-                                <h4 class="kontak-title">Instagram</h4>
-                                <p class="kontak-text"><a href="https://instagram.com/masjidkidul" target="_blank">@masjidkidul</a></p>
-                                <p class="kontak-subtext">Follow untuk update kegiatan terbaru</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div data-aos="fade-left" data-aos-duration="1000">
-                    <div class="maps-card">
-                        <div class="maps-header">
-                            <h3><i class="fas fa-map-marked-alt"></i> Lokasi Kami</h3>
-                            <p>Kunjungi kami di lokasi berikut</p>
-                        </div>
-                        <iframe 
-                            src="https://www.google.com/maps?q=Penawangan,+Tawangsari,+Wonosobo&output=embed"
-                            class="maps-iframe"
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <div class="maps-footer">
-                            <a href="https://maps.app.goo.gl/3yUgk35AyWynkzeF8" target="_blank">
-                                <i class="fas fa-directions"></i>
-                                Buka di Google Maps
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="container">
-            
-            <div class="footer-grid">
-                
-                <div>
-                    <div class="footer-logo">
-                        <div class="footer-logo-icon"><i class="fas fa-mosque"></i></div>
-                        <div class="footer-logo-text">
-                            <h3>Masjid Al-Furqon</h3>
-                            <p>Membangun Generasi Rabbani</p>
-                        </div>
-                    </div>
-                    <p class="footer-desc">Masjid Al-Furqon adalah pusat ibadah dan pembinaan umat Islam di Dusun Penawangan, Wonosobo yang berkomitmen untuk menjadi rahmat bagi semesta alam melalui kegiatan keagamaan, pendidikan, dan sosial.</p>
-                    <div class="footer-social">
-                        <a href="https://instagram.com/masjidkidul" target="_blank" title="Instagram @masjidkidul"><i class="fab fa-instagram"></i></a>
-                        <a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank" title="WhatsApp Sekretariat"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:alfurqonm94@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="footer-title"><i class="fas fa-link"></i> Tautan Cepat</h4>
-                    <ul class="footer-links">
-                        <li><a href="#beranda"><i class="fas fa-chevron-right"></i>Beranda</a></li>
-                        <li><a href="#profil"><i class="fas fa-chevron-right"></i>Profil Masjid</a></li>
-                        <li><a href="#organisasi"><i class="fas fa-chevron-right"></i>Organisasi DKM</a></li>
-                        <li><a href="#jadwal"><i class="fas fa-chevron-right"></i>Jadwal Sholat</a></li>
-                        <li><a href="#layanan"><i class="fas fa-chevron-right"></i>Kegiatan & Layanan</a></li>
-                        <li><a href="#galeri"><i class="fas fa-chevron-right"></i>Galeri</a></li>
-                        <li><a href="#kontak"><i class="fas fa-chevron-right"></i>Kontak</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="footer-title"><i class="fas fa-phone"></i> Hubungi Kami</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i><span>Dusun Penawangan, RT.02/RW.01, Penawangan, Tawangsari, Kec. Wonosobo, Kabupaten Wonosobo, Jawa Tengah 56313</span></li>
-                        <li><i class="fab fa-whatsapp"></i><a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank">+62 813-2873-0880</a></li>
-                        <li><i class="fas fa-envelope"></i><a href="mailto:alfurqonm94@gmail.com">alfurqonm94@gmail.com</a></li>
-                        <li><i class="fab fa-instagram"></i><a href="https://instagram.com/masjidkidul" target="_blank">@masjidkidul</a></li>
-                        <li><i class="fas fa-clock"></i><span>Sekretariat: 08:00 - 17:00</span></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-ayat">
-                <div class="footer-ayat-box">
-                    <p class="footer-ayat-arabic">"إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ"</p>
-                    <p class="footer-ayat-translation">"Sesungguhnya yang memakmurkan masjid-masjid Allah ialah orang-orang yang beriman kepada Allah dan Hari kemudian" (QS. At-Taubah: 18)</p>
-                </div>
-            </div>
-            
-            <div class="footer-copyright">
-                <p>&copy; 2026 <span class="brand">DKM Masjid Al-Furqon</span>. All Rights Reserved.</p>
-                <p class="sub">Dibuat dengan <i class="fas fa-heart heart"></i> untuk kemakmuran umat</p>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- ==================== LIGHTBOX ==================== -->
-    <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
-        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
-        <div class="lightbox-content">
-            <img id="lightboxImg" src="" alt="">
-            <p id="lightboxCaption" class="lightbox-caption"></p>
-        </div>
-    </div>
-    
-    <!-- ==================== JAVASCRIPT ==================== -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 100
-        });
-        
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
-        });
-        
-        // Mobile Menu Toggle
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isMenuOpen = false;
-        
-        hamburgerBtn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            mobileMenu.classList.toggle('active');
-            const icon = hamburgerBtn.querySelector('i');
-            if (isMenuOpen) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                isMenuOpen = false;
-                mobileMenu.classList.remove('active');
-                const icon = hamburgerBtn.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-        
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Tab Switching
-        const tabKegiatan = document.getElementById('tab-kegiatan');
-        const tabLayanan = document.getElementById('tab-layanan');
-        const contentKegiatan = document.getElementById('content-kegiatan');
-        const contentLayanan = document.getElementById('content-layanan');
-        
-        tabKegiatan.addEventListener('click', () => {
-            tabKegiatan.classList.add('active');
-            tabLayanan.classList.remove('active');
-            contentKegiatan.classList.remove('hidden');
-            contentLayanan.classList.add('hidden');
-        });
-        
-        tabLayanan.addEventListener('click', () => {
-            tabLayanan.classList.add('active');
-            tabKegiatan.classList.remove('active');
-            contentLayanan.classList.remove('hidden');
-            contentKegiatan.classList.add('hidden');
-        });
-        
-        // Notification System
-        function showNotification(message, type) {
-            const existingNotifications = document.querySelectorAll('.notification-toast');
-            existingNotifications.forEach(n => n.remove());
-            
-            const notification = document.createElement('div');
-            notification.className = `notification-toast ${type}`;
-            notification.innerHTML = `
-                <div class="notif-content">
-                    <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
-                    <span>${message}</span>
-                </div>
-            `;
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.transition = 'all 0.3s ease';
-                notification.style.transform = 'translateX(400px)';
-                notification.style.opacity = '0';
-                setTimeout(() => notification.remove(), 300);
-            }, 3000);
-        }
-        
-        // Lightbox
-        function openLightbox(src, caption) {
-            const lightbox = document.getElementById('lightbox');
-            document.getElementById('lightboxImg').src = src;
-            document.getElementById('lightboxCaption').textContent = caption || '';
-            lightbox.classList.add('active');
-            document.body.classList.add('modal-open');
-        }
-        
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-            document.body.classList.remove('modal-open');
-        }
-        
-        // Close lightbox with ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-        
-        // Update current date
-        function updateCurrentDate() {
-            const dateElement = document.getElementById('current-date');
-            if (dateElement) {
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                const today = new Date().toLocaleDateString('id-ID', options);
-                dateElement.textContent = today;
-            }
-        }
-        
-        updateCurrentDate();
-    </script>
-    
+
+<nav id="navbar" class="navbar">
+<div class="container">
+<div class="navbar-inner">
+
+<div class="navbar-logo" data-aos="fade-right">
+<div class="logo-icon">
+<i class="fas fa-mosque"></i>
+</div>
+<div class="logo-text">
+<h1>Masjid Al-Furqon</h1>
+<p>Membangun Generasi Rabbani</p>
+</div>
+</div>
+
+<div class="navbar-menu" data-aos="fade-down">
+<a href="#beranda">Beranda</a>
+<a href="#profil">Profil</a>
+<a href="#organisasi">Organisasi</a>
+<a href="#jadwal">Jadwal</a>
+<a href="#layanan">Layanan</a>
+<a href="#galeri">Galeri</a>
+<a href="#kontak">Kontak</a>
+</div>
+
+<div class="navbar-actions" data-aos="fade-left">
+<a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp">
+<i class="fab fa-whatsapp"></i>
+<span>Chat Kami</span>
+</a>
+</div>
+
+<button id="hamburger-btn" class="hamburger-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+
+<div id="mobile-menu" class="mobile-menu">
+<div class="mobile-menu-inner">
+<a href="#beranda">Beranda</a>
+<a href="#profil">Profil</a>
+<a href="#organisasi">Organisasi</a>
+<a href="#jadwal">Jadwal</a>
+<a href="#layanan">Layanan</a>
+<a href="#galeri">Galeri</a>
+<a href="#kontak">Kontak</a>
+<a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp btn-block">
+<i class="fab fa-whatsapp"></i>
+<span>Chat WhatsApp</span>
+</a>
+</div>
+</div>
+</nav>
+
+<section id="beranda" class="hero">
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+<h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000">
+Selamat Datang di<br>
+<span class="highlight">Masjid Al-Furqon</span>
+</h1>
+
+<p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+"Membangun Generasi Rabbani, Menebar Rahmat bagi Semesta"
+</p>
+
+<div class="hero-buttons" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+<a href="#jadwal" class="btn btn-primary btn-lg">
+<i class="fas fa-clock"></i>
+<span>Lihat Jadwal Sholat</span>
+</a>
+
+<button onclick="showNotification('Pendaftaran TPA akan segera dibuka! Hubungi sekretariat untuk info lebih lanjut.', 'info')" class="btn btn-white btn-lg">
+<i class="fas fa-book-quran"></i>
+<span>Daftar TPA</span>
+</button>
+
+<a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp btn-lg">
+<i class="fab fa-whatsapp"></i>
+<span>Hubungi Kami</span>
+</a>
+</div>
+</div>
+
+<div class="scroll-indicator">
+<i class="fas fa-chevron-down"></i>
+</div>
+</section>
+
+<section id="jadwal-widget" class="sholat-widget">
+<div class="container">
+<div class="sholat-card-container" data-aos="fade-up" data-aos-duration="1000">
+
+<div class="sholat-header">
+<h2>
+<i class="fas fa-mosque text-amber-500 mr-2"></i>
+Jadwal Sholat Hari Ini
+</h2>
+<p class="text-gray-600" id="current-date">Kamis, 2 Juli 2026</p>
+</div>
+
+<div class="sholat-grid">
+<div class="sholat-card subuh" onclick="showNotification('Subuh: 04:30 WIB', 'info')">
+<div class="sholat-icon bg-blue-800">
+<i class="fas fa-moon"></i>
+</div>
+<h3 class="sholat-name">Subuh</h3>
+<p class="sholat-time">04:30</p>
+<p class="sholat-zone">WIB</p>
+</div>
+
+<div class="sholat-card dzuhur" onclick="showNotification('Dzuhur: 12:00 WIB', 'info')">
+<div class="sholat-icon bg-amber-500">
+<i class="fas fa-sun"></i>
+</div>
+<h3 class="sholat-name">Dzuhur</h3>
+<p class="sholat-time">12:00</p>
+<p class="sholat-zone">WIB</p>
+</div>
+
+<div class="sholat-card ashar" onclick="showNotification('Ashar: 15:15 WIB', 'info')">
+<div class="sholat-icon bg-orange-500">
+<i class="fas fa-cloud-sun"></i>
+</div>
+<h3 class="sholat-name">Ashar</h3>
+<p class="sholat-time">15:15</p>
+<p class="sholat-zone">WIB</p>
+</div>
+
+<div class="sholat-card maghrib" onclick="showNotification('Maghrib: 17:55 WIB', 'info')">
+<div class="sholat-icon bg-red-500">
+<i class="fas fa-cloud-moon"></i>
+</div>
+<h3 class="sholat-name">Maghrib</h3>
+<p class="sholat-time">17:55</p>
+<p class="sholat-zone">WIB</p>
+</div>
+
+<div class="sholat-card isya" onclick="showNotification('Isya: 19:05 WIB', 'info')">
+<div class="sholat-icon bg-indigo-600">
+<i class="fas fa-star"></i>
+</div>
+<h3 class="sholat-name">Isya</h3>
+<p class="sholat-time">19:05</p>
+<p class="sholat-zone">WIB</p>
+</div>
+</div>
+
+<div class="text-center mt-6 pt-6 border-t">
+<p class="text-sm text-gray-600">
+<i class="fas fa-info-circle text-blue-800 mr-1"></i>
+Jadwal sholat dapat berubah sesuai dengan perhitungan astronomi dan keputusan MUI setempat
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="profil" class="section section-bg-gray">
+<div class="container">
+
+<div class="section-header" data-aos="fade-up">
+<h2 class="section-title">Tentang Masjid Al-Furqon</h2>
+<div class="section-divider"></div>
+</div>
+
+<div class="grid-2 items-center mb-20">
+
+<div data-aos="fade-right" data-aos-duration="1000">
+<h3 class="visi-misi-title">
+<i class="fas fa-mosque text-amber-500"></i>
+Visi & Misi
+</h3>
+
+<div class="mb-8">
+<h4 class="visi-misi-subtitle">
+<i class="fas fa-eye text-amber-500"></i>
+Visi
+</h4>
+<p class="visi-misi-text">
+Menjadi masjid yang menjadi pusat peradaban Islam, tempat pembinaan umat,
+dan sumber inspirasi bagi masyarakat untuk mencapai kebahagiaan dunia dan akhirat.
+</p>
+</div>
+
+<div>
+<h4 class="visi-misi-subtitle">
+<i class="fas fa-bullseye text-amber-500"></i>
+Misi
+</h4>
+<ul class="check-list">
+<li>
+<i class="fas fa-check-circle"></i>
+<span>Menyelenggarakan ibadah sholat 5 waktu dan sholat Jumat dengan khusyuk</span>
+</li>
+<li>
+<i class="fas fa-check-circle"></i>
+<span>Mengadakan kajian Islam dan pendidikan Al-Quran untuk semua usia</span>
+</li>
+<li>
+<i class="fas fa-check-circle"></i>
+<span>Memberikan layanan sosial dan kemanusiaan bagi masyarakat</span>
+</li>
+<li>
+<i class="fas fa-check-circle"></i>
+<span>Membangun ukhuwah islamiyah dan mempererat silaturahmi umat</span>
+</li>
+</ul>
+</div>
+</div>
+
+<div data-aos="fade-left" data-aos-duration="1000">
+<div class="image-wrapper" onclick="openLightbox('https://image.qwenlm.ai/public_source/b9009866-5dfd-4024-8e02-fe82d714ed7a/11b7dfc92-8847-4960-bb7c-478393b338db.png', 'Masjid Al-Furqon')">
+<img src="https://image.qwenlm.ai/public_source/b9009866-5dfd-4024-8e02-fe82d714ed7a/11b7dfc92-8847-4960-bb7c-478393b338db.png" alt="Masjid Al-Furqon">
+<div class="image-expand">
+<i class="fas fa-expand text-blue-800"></i>
+</div>
+</div>
+</div>
+</div>
+
+<div data-aos="fade-up" data-aos-duration="1000">
+<h3 class="section-title text-center mb-8">
+<i class="fas fa-building text-amber-500 mr-2"></i>
+Fasilitas Kami
+</h3>
+
+<div class="grid-4">
+<div class="card card-bordered-blue" onclick="showNotification('Ruang Sholat Utama - Kapasitas 1000 jamaah', 'info')">
+<div class="card-icon bg-blue-100 text-blue-800">
+<i class="fas fa-pray"></i>
+</div>
+<h4 class="card-title">Ruang Sholat Utama</h4>
+<p class="card-text">Kapasitas 1000 jamaah dengan pendingin udara dan sistem audio berkualitas tinggi</p>
+</div>
+
+<div class="card card-bordered-amber" onclick="showNotification('Tempat Wudhu - Terpisah pria & wanita', 'info')">
+<div class="card-icon bg-amber-100 text-amber-600">
+<i class="fas fa-faucet"></i>
+</div>
+<h4 class="card-title">Tempat Wudhu</h4>
+<p class="card-text">Terpisah antara pria dan wanita dengan air bersih dan fasilitas lengkap</p>
+</div>
+
+<div class="card card-bordered-blue" onclick="showNotification('Lahan Parkir - Keamanan 24 jam', 'info')">
+<div class="card-icon bg-blue-100 text-blue-800">
+<i class="fas fa-parking"></i>
+</div>
+<h4 class="card-title">Lahan Parkir</h4>
+<p class="card-text">Area parkir luas untuk mobil dan motor dengan keamanan 24 jam</p>
+</div>
+
+<div class="card card-bordered-amber" onclick="showNotification('TPA & Perpustakaan - Buka setiap hari', 'info')">
+<div class="card-icon bg-amber-100 text-amber-600">
+<i class="fas fa-book-open"></i>
+</div>
+<h4 class="card-title">TPA & Perpustakaan</h4>
+<p class="card-text">Tempat pendidikan Al-Quran anak dan koleksi buku-buku Islam lengkap</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="organisasi" class="organisasi-section">
+<div class="container">
+
+<div class="section-header" data-aos="fade-up">
+<h2 class="section-title">Struktur Organisasi PRM Tawangsari</h2>
+<div class="section-divider"></div>
+</div>
+
+<div class="organisasi-header-info" data-aos="fade-up">
+<p class="location">
+<i class="fas fa-map-marker-alt text-amber-500 mr-2"></i>
+Penawangan, Kel. Tawang Sari, Kec. Wonosobo
+</p>
+<span class="periode">
+<i class="fas fa-calendar-alt mr-2"></i>
+Masa Khaidmad: 2023 - 2027
+</span>
+</div>
+
+<div class="mb-12" data-aos="fade-up">
+<h3 class="text-center text-2xl font-bold text-blue-900 mb-6">
+<i class="fas fa-crown text-amber-500 mr-2"></i>
+Ketua
+</h3>
+<div class="organisasi-grid">
+<div class="organisasi-card ketua">
+<div class="organisasi-avatar">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Sutaryo Arba">
+</div>
+<span class="organisasi-position">Ketua PRM</span>
+<h4 class="organisasi-name">Sutaryo Arba</h4>
+<p class="organisasi-desc">Pemimpin organisasi periode 2023-2027</p>
+</div>
+</div>
+</div>
+
+<div class="mb-12" data-aos="fade-up">
+<h3 class="text-center text-2xl font-bold text-blue-900 mb-6">
+<i class="fas fa-user-tie text-amber-500 mr-2"></i>
+Sekretaris & Bendahara
+</h3>
+<div class="organisasi-grid">
+<div class="organisasi-card">
+<div class="organisasi-avatar">
+<img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Husni Ash Shidiqi">
+</div>
+<span class="organisasi-position">Sekretaris</span>
+<h4 class="organisasi-name">Husni Ash Shidiqi</h4>
+<p class="organisasi-desc">Mengelola administrasi organisasi</p>
+</div>
+
+<div class="organisasi-card">
+<div class="organisasi-avatar">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face" alt="Agus Hartanto">
+</div>
+<span class="organisasi-position">Bendahara</span>
+<h4 class="organisasi-name">Agus Hartanto</h4>
+<p class="organisasi-desc">Mengelola keuangan organisasi</p>
+</div>
+</div>
+</div>
+
+<div data-aos="fade-up">
+<h3 class="text-center text-2xl font-bold text-blue-900 mb-6">
+<i class="fas fa-sitemap text-amber-500 mr-2"></i>
+Seksi - Seksi
+</h3>
+
+<div class="seksi-grid">
+<div class="seksi-card">
+<div class="seksi-avatar">
+<img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face" alt="Sapardi">
+</div>
+<div class="seksi-number">1</div>
+<h4 class="seksi-title">Ibadah, ZIS & PHBI</h4>
+<p class="seksi-koordinator"><strong>Koordinator:</strong></p>
+<p class="seksi-name">Sapardi</p>
+</div>
+
+<div class="seksi-card">
+<div class="seksi-avatar">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face" alt="Yusman">
+</div>
+<div class="seksi-number">2</div>
+<h4 class="seksi-title">Dakwah, Pendidikan, Wakaf, Remaja</h4>
+<p class="seksi-koordinator"><strong>Koordinator:</strong></p>
+<p class="seksi-name">Yusman</p>
+</div>
+
+<div class="seksi-card">
+<div class="seksi-avatar">
+<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face" alt="Waluyo">
+</div>
+<div class="seksi-number">3</div>
+<h4 class="seksi-title">Ekonomi, Perencanaan, Pemeliharaan</h4>
+<p class="seksi-koordinator"><strong>Koordinator:</strong></p>
+<p class="seksi-name">Waluyo</p>
+</div>
+
+<div class="seksi-card">
+<div class="seksi-avatar">
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face" alt="Ngadirun Sumaryo">
+</div>
+<div class="seksi-number">4</div>
+<h4 class="seksi-title">Pembangunan, Keamanan & Perlengkapan</h4>
+<p class="seksi-koordinator"><strong>Koordinator:</strong></p>
+<p class="seksi-name">Ngadirun Sumaryo</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="layanan" class="section section-bg-gray">
+<div class="container">
+
+<div class="section-header" data-aos="fade-up">
+<h2 class="section-title">Kegiatan & Layanan</h2>
+<div class="section-divider"></div>
+<p class="section-subtitle">Berbagai kegiatan rutin dan layanan untuk umat</p>
+</div>
+
+<div class="tabs-nav" data-aos="fade-up" data-aos-delay="200">
+<button id="tab-kegiatan" class="tab-btn active">
+<i class="fas fa-calendar-alt mr-2"></i>
+Kegiatan Rutin
+</button>
+<button id="tab-layanan" class="tab-btn">
+<i class="fas fa-hands-helping mr-2"></i>
+Layanan Umat
+</button>
+</div>
+
+<div id="content-kegiatan" class="tab-content">
+<div class="grid-3">
+
+<div class="kegiatan-card">
+<div class="kegiatan-header">
+<div class="kegiatan-icon">
+<i class="fas fa-sun"></i>
+</div>
+<h3 class="kegiatan-title">Kajian Subuh</h3>
+</div>
+<div class="kegiatan-info">
+<p><i class="fas fa-clock"></i><span>Setiap Hari, 05:00 - 06:00 WIB</span></p>
+<p><i class="fas fa-map-marker-alt"></i><span>Ruang Sholat Utama</span></p>
+<p><i class="fas fa-user-tie"></i><span>Ustadz Ahmad Fauzi, Lc.</span></p>
+</div>
+<p class="kegiatan-desc">Kajian tafsir Al-Quran dan hadits dengan pembahasan tema-tema keislaman yang relevan dengan kehidupan sehari-hari.</p>
+<button onclick="showNotification('Pendaftaran Kajian Subuh akan segera dibuka!', 'info')" class="btn btn-primary btn-block mt-4">
+<i class="fas fa-user-plus"></i> Daftar Kajian
+</button>
+</div>
+
+<div class="kegiatan-card amber">
+<div class="kegiatan-header">
+<div class="kegiatan-icon">
+<i class="fas fa-cloud-moon"></i>
+</div>
+<h3 class="kegiatan-title">Kajian Maghrib</h3>
+</div>
+<div class="kegiatan-info">
+<p><i class="fas fa-clock"></i><span>Senin & Kamis, 18:00 - 19:30 WIB</span></p>
+<p><i class="fas fa-map-marker-alt"></i><span>Ruang Sholat Utama</span></p>
+<p><i class="fas fa-user-tie"></i><span>Ustadz Dr. Muhammad Rizki</span></p>
+</div>
+<p class="kegiatan-desc">Kajian fiqih kontemporer dan masalah-masalah keagamaan yang sering dihadapi masyarakat modern.</p>
+<button onclick="showNotification('Pendaftaran Kajian Maghrib akan segera dibuka!', 'info')" class="btn btn-amber btn-block mt-4">
+<i class="fas fa-user-plus"></i> Daftar Kajian
+</button>
+</div>
+
+<div class="kegiatan-card">
+<div class="kegiatan-header">
+<div class="kegiatan-icon">
+<i class="fas fa-child"></i>
+</div>
+<h3 class="kegiatan-title">TPA Anak</h3>
+</div>
+<div class="kegiatan-info">
+<p><i class="fas fa-clock"></i><span>Selasa, Rabu, Jumat, 15:30 - 17:00 WIB</span></p>
+<p><i class="fas fa-map-marker-alt"></i><span>Ruang TPA & Perpustakaan</span></p>
+<p><i class="fas fa-user-tie"></i><span>Tim Pengajar TPA</span></p>
+</div>
+<p class="kegiatan-desc">Pendidikan Al-Quran, hadits, fiqih, dan akhlak untuk anak usia 5-12 tahun dengan metode pembelajaran yang menyenangkan.</p>
+<button onclick="showNotification('Pendaftaran TPA akan segera dibuka! Hubungi sekretariat untuk info lebih lanjut.', 'info')" class="btn btn-primary btn-block mt-4">
+<i class="fas fa-user-plus"></i> Daftar Sekarang
+</button>
+</div>
+</div>
+</div>
+
+<div id="content-layanan" class="tab-content hidden">
+<div class="grid-3">
+
+<div class="layanan-card">
+<div class="layanan-icon">
+<i class="fas fa-ring"></i>
+</div>
+<h3 class="layanan-title">Layanan Pernikahan</h3>
+<p class="layanan-desc">Konsultasi dan pendampingan untuk calon pengantin muslim, termasuk bimbingan pra-nikah dan administrasi nikah.</p>
+<div class="layanan-contact">
+<p><i class="fas fa-phone text-blue-600"></i><span>Hubungi: +62 813-2873-0880</span></p>
+<p><i class="fas fa-envelope text-blue-600"></i><span>alfurqonm94@gmail.com</span></p>
+</div>
+<a href="https://api.whatsapp.com/send/?phone=6281328730880&text=Assalamualaikum,%20saya%20ingin%20konsultasi%20layanan%20pernikahan&type=phone_number&app_absent=0" target="_blank" class="btn btn-primary btn-block mt-4">
+<i class="fab fa-whatsapp"></i> Chat via WhatsApp
+</a>
+</div>
+
+<div class="layanan-card amber">
+<div class="layanan-icon">
+<i class="fas fa-heart"></i>
+</div>
+<h3 class="layanan-title">Pengurusan Jenazah</h3>
+<p class="layanan-desc">Layanan pemulasaran jenazah sesuai syariat Islam (memandikan, mengkafani, mensholatkan) 24 jam.</p>
+<div class="layanan-contact">
+<p><i class="fas fa-phone text-amber-600"></i><span>Emergency: +62 813-2873-0880</span></p>
+<p><i class="fas fa-clock text-amber-600"></i><span>Tersedia 24 Jam</span></p>
+</div>
+<a href="https://api.whatsapp.com/send/?phone=6281328730880&text=Assalamualaikum,%20saya%20membutuhkan%20layanan%20pengurusan%20jenazah&type=phone_number&app_absent=0" target="_blank" class="btn btn-amber btn-block mt-4">
+<i class="fab fa-whatsapp"></i> Hubungi Emergency
+</a>
+</div>
+
+<div class="layanan-card">
+<div class="layanan-icon">
+<i class="fas fa-comments"></i>
+</div>
+<h3 class="layanan-title">Konsultasi Syariah</h3>
+<p class="layanan-desc">Layanan konsultasi masalah keagamaan, fiqih, dan kehidupan keluarga bersama ustadz berpengalaman.</p>
+<div class="layanan-contact">
+<p><i class="fas fa-calendar text-blue-600"></i><span>Sabtu, 09:00 - 12:00 WIB</span></p>
+<p><i class="fas fa-map-marker-alt text-blue-600"></i><span>Ruang Konsultasi Lt. 2</span></p>
+</div>
+<a href="https://api.whatsapp.com/send/?phone=6281328730880&text=Assalamualaikum,%20saya%20ingin%20konsultasi%20syariah&type=phone_number&app_absent=0" target="_blank" class="btn btn-primary btn-block mt-4">
+<i class="fab fa-whatsapp"></i> Chat via WhatsApp
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="galeri" class="section section-bg-white">
+<div class="container">
+
+<div class="section-header" data-aos="fade-up">
+<h2 class="section-title">Dokumentasi Kegiatan</h2>
+<div class="section-divider"></div>
+<p class="section-subtitle">Momen berharga dari berbagai kegiatan Masjid Al-Furqon</p>
+</div>
+
+<div class="grid-gallery" data-aos="fade-up">
+<div class="galeri-item large" onclick="openLightbox('https://image.qwenlm.ai/public_source/b9009866-5dfd-4024-8e02-fe82d714ed7a/11b7dfc92-8847-4960-bb7c-478393b338db.png', 'Masjid Al-Furqon')">
+<img src="https://image.qwenlm.ai/public_source/b9009866-5dfd-4024-8e02-fe82d714ed7a/11b7dfc92-8847-4960-bb7c-478393b338db.png" alt="Masjid Al-Furqon">
+<div class="galeri-overlay">
+<div>
+<h4>Masjid Al-Furqon</h4>
+<p>Tampak depan masjid yang megah</p>
+</div>
+</div>
+</div>
+
+<div class="galeri-item" onclick="openLightbox('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=1600&h=1200&fit=crop', 'Kajian Islam')">
+<img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=800&h=600&fit=crop" alt="Kajian Islam">
+<div class="galeri-overlay">
+<div>
+<h4>Kajian Islam</h4>
+<p>Kajian rutin bersama ustadz</p>
+</div>
+</div>
+</div>
+
+<div class="galeri-item" onclick="openLightbox('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=1600&h=1200&fit=crop', 'Arsitektur Islami')">
+<img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&h=600&fit=crop" alt="Arsitektur Masjid">
+<div class="galeri-overlay">
+<div>
+<h4>Arsitektur Islami</h4>
+<p>Keindahan ornamen khas Islami</p>
+</div>
+</div>
+</div>
+
+<div class="galeri-item" onclick="openLightbox('https://images.unsplash.com/photo-1564769625905-50e93615e769?w=1600&h=1200&fit=crop', 'Kegiatan TPA')">
+<img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&h=600&fit=crop" alt="Kegiatan TPA">
+<div class="galeri-overlay">
+<div>
+<h4>Kegiatan TPA</h4>
+<p>Pendidikan Al-Quran untuk anak</p>
+</div>
+</div>
+</div>
+
+<div class="galeri-item" onclick="openLightbox('https://images.unsplash.com/photo-1519817914152-22f2e10a7a0e?w=1600&h=1200&fit=crop', 'Sholat Berjamaah')">
+<img src="https://images.unsplash.com/photo-1519817914152-22f2e10a7a0e?w=800&h=600&fit=crop" alt="Sholat Berjamaah">
+<div class="galeri-overlay">
+<div>
+<h4>Sholat Berjamaah</h4>
+<p>Keindahan sholat berjamaah</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="kontak" class="section section-bg-gray">
+<div class="container">
+
+<div class="section-header" data-aos="fade-up">
+<h2 class="section-title">Hubungi Kami</h2>
+<div class="section-divider"></div>
+<p class="section-subtitle">Kami siap melayani Anda dengan senang hati</p>
+</div>
+
+<div class="grid-2">
+
+<div data-aos="fade-right" data-aos-duration="1000">
+<div class="kontak-card">
+<h3 class="kontak-card-title">
+<i class="fas fa-address-book text-amber-500"></i>
+Informasi Kontak
+</h3>
+
+<div class="kontak-item">
+<div class="kontak-icon"><i class="fas fa-map-marker-alt"></i></div>
+<div>
+<h4 class="kontak-title">Alamat Masjid</h4>
+<p class="kontak-text">Dusun Penawangan, RT.02/RW.01, Penawangan, Tawangsari, Kec. Wonosobo, Kabupaten Wonosobo, Jawa Tengah 56313</p>
+</div>
+</div>
+
+<div class="kontak-item">
+<div class="kontak-icon green"><i class="fab fa-whatsapp"></i></div>
+<div>
+<h4 class="kontak-title">WhatsApp Sekretariat</h4>
+<p class="kontak-text"><a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank">+62 813-2873-0880</a></p>
+<p class="kontak-subtext">Senin - Sabtu, 08:00 - 17:00 WIB</p>
+</div>
+</div>
+
+<div class="kontak-item">
+<div class="kontak-icon amber"><i class="fas fa-envelope"></i></div>
+<div>
+<h4 class="kontak-title">Email</h4>
+<p class="kontak-text"><a href="mailto:alfurqonm94@gmail.com">alfurqonm94@gmail.com</a></p>
+<p class="kontak-subtext">Respon dalam 1x24 jam</p>
+</div>
+</div>
+
+<div class="kontak-item">
+<div class="kontak-icon pink"><i class="fab fa-instagram"></i></div>
+<div>
+<h4 class="kontak-title">Instagram</h4>
+<p class="kontak-text"><a href="https://instagram.com/masjidkidul" target="_blank">@masjidkidul</a></p>
+<p class="kontak-subtext">Follow untuk update kegiatan terbaru</p>
+</div>
+</div>
+</div>
+</div>
+
+<div data-aos="fade-left" data-aos-duration="1000">
+<div class="maps-card">
+<div class="maps-header">
+<h3><i class="fas fa-map-marked-alt"></i> Lokasi Kami</h3>
+<p>Kunjungi kami di lokasi berikut</p>
+</div>
+<iframe
+src="https://www.google.com/maps?q=Penawangan,+Tawangsari,+Wonosobo&output=embed"
+class="maps-iframe"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+<div class="maps-footer">
+<a href="https://maps.app.goo.gl/3yUgk35AyWynkzeF8" target="_blank">
+<i class="fas fa-directions"></i>
+Buka di Google Maps
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-logo">
+<div class="footer-logo-icon"><i class="fas fa-mosque"></i></div>
+<div class="footer-logo-text">
+<h3>Masjid Al-Furqon</h3>
+<p>Membangun Generasi Rabbani</p>
+</div>
+</div>
+<p class="footer-desc">Masjid Al-Furqon adalah pusat ibadah dan pembinaan umat Islam di Dusun Penawangan, Wonosobo yang berkomitmen untuk menjadi rahmat bagi semesta alam melalui kegiatan keagamaan, pendidikan, dan sosial.</p>
+<div class="footer-social">
+<a href="https://instagram.com/masjidkidul" target="_blank" title="Instagram @masjidkidul"><i class="fab fa-instagram"></i></a>
+<a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank" title="WhatsApp Sekretariat"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:alfurqonm94@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+</div>
+</div>
+
+<div>
+<h4 class="footer-title"><i class="fas fa-link"></i> Tautan Cepat</h4>
+<ul class="footer-links">
+<li><a href="#beranda"><i class="fas fa-chevron-right"></i>Beranda</a></li>
+<li><a href="#profil"><i class="fas fa-chevron-right"></i>Profil Masjid</a></li>
+<li><a href="#organisasi"><i class="fas fa-chevron-right"></i>Organisasi PRM</a></li>
+<li><a href="#jadwal"><i class="fas fa-chevron-right"></i>Jadwal Sholat</a></li>
+<li><a href="#layanan"><i class="fas fa-chevron-right"></i>Kegiatan & Layanan</a></li>
+<li><a href="#galeri"><i class="fas fa-chevron-right"></i>Galeri</a></li>
+<li><a href="#kontak"><i class="fas fa-chevron-right"></i>Kontak</a></li>
+</ul>
+</div>
+
+<div>
+<h4 class="footer-title"><i class="fas fa-phone"></i> Hubungi Kami</h4>
+<ul class="footer-contact">
+<li><i class="fas fa-map-marker-alt"></i><span>Dusun Penawangan, RT.02/RW.01, Penawangan, Tawangsari, Kec. Wonosobo, Kabupaten Wonosobo, Jawa Tengah 56313</span></li>
+<li><i class="fab fa-whatsapp"></i><a href="https://api.whatsapp.com/send/?phone=6281328730880&text&type=phone_number&app_absent=0" target="_blank">+62 813-2873-0880</a></li>
+<li><i class="fas fa-envelope"></i><a href="mailto:alfurqonm94@gmail.com">alfurqonm94@gmail.com</a></li>
+<li><i class="fab fa-instagram"></i><a href="https://instagram.com/masjidkidul" target="_blank">@masjidkidul</a></li>
+<li><i class="fas fa-clock"></i><span>Sekretariat: 08:00 - 17:00</span></li>
+</ul>
+</div>
+</div>
+
+<div class="footer-ayat">
+<div class="footer-ayat-box">
+<p class="footer-ayat-arabic">"إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ"</p>
+<p class="footer-ayat-translation">"Sesungguhnya yang memakmurkan masjid-masjid Allah ialah orang-orang yang beriman kepada Allah dan Hari kemudian" (QS. At-Taubah: 18)</p>
+</div>
+</div>
+
+<div class="footer-copyright">
+<p>© 2026 <span class="brand">DKM Masjid Al-Furqon</span>. All Rights Reserved.</p>
+<p class="sub">Dibuat dengan <i class="fas fa-heart heart"></i> untuk kemakmuran umat</p>
+</div>
+</div>
+</footer>
+
+<div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
+<button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+<div class="lightbox-content">
+<img id="lightboxImg" src="" alt="">
+<p id="lightboxCaption" class="lightbox-caption"></p>
+</div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+// Initialize AOS
+AOS.init({
+duration: 800,
+easing: 'ease-out-cubic',
+once: true,
+offset: 100
+});
+
+// Navbar Scroll Effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 50) {
+navbar.classList.add('navbar-scrolled');
+} else {
+navbar.classList.remove('navbar-scrolled');
+}
+});
+
+// Mobile Menu Toggle
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+let isMenuOpen = false;
+
+hamburgerBtn.addEventListener('click', () => {
+isMenuOpen = !isMenuOpen;
+mobileMenu.classList.toggle('active');
+const icon = hamburgerBtn.querySelector('i');
+if (isMenuOpen) {
+icon.classList.remove('fa-bars');
+icon.classList.add('fa-times');
+} else {
+icon.classList.remove('fa-times');
+icon.classList.add('fa-bars');
+}
+});
+
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', () => {
+isMenuOpen = false;
+mobileMenu.classList.remove('active');
+const icon = hamburgerBtn.querySelector('i');
+icon.classList.remove('fa-times');
+icon.classList.add('fa-bars');
+});
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+const href = this.getAttribute('href');
+if (href === '#') return;
+e.preventDefault();
+const target = document.querySelector(href);
+if (target) {
+const offsetTop = target.offsetTop - 80;
+window.scrollTo({
+top: offsetTop,
+behavior: 'smooth'
+});
+}
+});
+});
+
+// Tab Switching
+const tabKegiatan = document.getElementById('tab-kegiatan');
+const tabLayanan = document.getElementById('tab-layanan');
+const contentKegiatan = document.getElementById('content-kegiatan');
+const contentLayanan = document.getElementById('content-layanan');
+
+tabKegiatan.addEventListener('click', () => {
+tabKegiatan.classList.add('active');
+tabLayanan.classList.remove('active');
+contentKegiatan.classList.remove('hidden');
+contentLayanan.classList.add('hidden');
+});
+
+tabLayanan.addEventListener('click', () => {
+tabLayanan.classList.add('active');
+tabKegiatan.classList.remove('active');
+contentLayanan.classList.remove('hidden');
+contentKegiatan.classList.add('hidden');
+});
+
+// Notification System
+function showNotification(message, type) {
+const existingNotifications = document.querySelectorAll('.notification-toast');
+existingNotifications.forEach(n => n.remove());
+
+const notification = document.createElement('div');
+notification.className = `notification-toast ${type}`;
+notification.innerHTML = `
+<div class="notif-content">
+<i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+<span>${message}</span>
+</div>
+`;
+document.body.appendChild(notification);
+
+setTimeout(() => {
+notification.style.transition = 'all 0.3s ease';
+notification.style.transform = 'translateX(400px)';
+notification.style.opacity = '0';
+setTimeout(() => notification.remove(), 300);
+}, 3000);
+}
+
+// Lightbox
+function openLightbox(src, caption) {
+const lightbox = document.getElementById('lightbox');
+document.getElementById('lightboxImg').src = src;
+document.getElementById('lightboxCaption').textContent = caption || '';
+lightbox.classList.add('active');
+document.body.classList.add('modal-open');
+}
+
+function closeLightbox() {
+const lightbox = document.getElementById('lightbox');
+lightbox.classList.remove('active');
+document.body.classList.remove('modal-open');
+}
+
+// Close lightbox with ESC key
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') {
+closeLightbox();
+}
+});
+
+// Update current date
+function updateCurrentDate() {
+const dateElement = document.getElementById('current-date');
+if (dateElement) {
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const today = new Date().toLocaleDateString('id-ID', options);
+dateElement.textContent = today;
+}
+}
+
+updateCurrentDate();
+</script>
+
 </body>
 </html>
-
